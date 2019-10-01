@@ -1,38 +1,25 @@
 {
-  "name": "Alexander",
-  "private": true,
-  "dependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "react-redux": "^7.1.1",
-    "react-router-dom": "^5.1.1",
-    "redux": "^4.0.4",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
-    "webpack": "^4.41.0",
-    "webpack-cli": "^3.3.9"
-  },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "name": "alexander",
   "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch --mode=development",
-    "postinstall": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zuzuna54/Alexander.git"
+  },
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "12.5.0",
-    "npm": "6.9.0"
-  }
+  "bugs": {
+    "url": "https://github.com/Zuzuna54/Alexander/issues"
+  },
+  "homepage": "https://github.com/Zuzuna54/Alexander#readme"
 }

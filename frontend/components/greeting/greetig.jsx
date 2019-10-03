@@ -91,7 +91,7 @@ class Greeting extends React.Component {
                     </nav>  
                 <div className="app-links">
                     <p>Get the real app</p>
-                    <div>
+                    <div className="link-photos">
                     <img src={window.app1} />
                     <img src={window.app2} />
                     </div>
@@ -99,7 +99,8 @@ class Greeting extends React.Component {
             </div>
             </div>
                 <div className="footer">
-                    <a className="links" href="https://www.linkedin.com/in/giorgi-giorgobiani-282883153/">LinkedIn</a>
+                    <a className="links" href="https://www.linkedin.com/in/gio-giorgobiani-282883153 ">LinkedIn</a>
+                    
                     <a className="links" href="https://github.com/Zuzuna54">Github</a>
                     <p className="footer-mes">© 2019 INSTAGRAM FROM FACEBOOK</p>
                 </div>

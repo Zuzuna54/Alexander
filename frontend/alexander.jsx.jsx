@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login
     window.signup = signup
     let store;
-   
+    // debugger
     if(window.currentUser) {
         const preloadedState = {
             entities: {

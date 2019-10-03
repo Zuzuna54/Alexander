@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Instagram</title>
+    <title>Alexander</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "reset" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+<script type="text/javascript">
+  window.app1 = "<%= image_url('appstore_1.png') %>";
+  window.app2 = "<%= image_url('appstore_2.png') %>";
+  window.splash1 = "<%= image_url('splash_img.png') %>";
+</script>
+
 
   <body>
     <%= yield %>

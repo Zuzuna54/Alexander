@@ -6,8 +6,8 @@ import SessionForm from "./session_form";
 
 const msp = state => ({
     errors: state.errors.session,
-    formType: "Sign up",
-    navLink: <Link to="/login"> Log in if you alrady signed up! </Link>
+    formType: " Sign up",
+    navLink: <Link to="/login"> Log in</Link>
 });
 
 const mdp = dispatch => ({

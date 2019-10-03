@@ -21,13 +21,52 @@ body {
     align-items: center;
     justify-content: center;
 }
-ul {
+.errors{
  list-style-type: none;
  color: #ef5561;
  margin-bottom: 15px;
+ animation-name: slidein;
+ animation-duration: 8s;
  }
 
+ @keyframes slidein {
+  from { opacity: -1;
+  }
 
+  to { opacity: 1;
+  }
+}
+
+@keyframes sess-log {
+    from {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes splash-phot {
+    from {
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes sep-sess {
+    from {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
 
 
 /* float-container {
@@ -65,27 +104,73 @@ float-container.active label{
   padding-top: 3%;
   margin: auto;
   position: relative;
-  margin-right: 15px
+  margin-right: 15px;
+  animation-name: splash-phot;
+animation-duration: 1s;
+}
+.top {
+    position: absolute;
+    left: 122px;
+    width: 240px;
+    top: 114px;
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-direction: alternate;
+}
+.middle {
+    position: absolute;
+    left: 122px;
+    width: 240px;
+    top: 114px;
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 9s;
+    animation-direction: alternate;
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .session-container{
     margin: auto;
     width: 350px;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.Alexander {   
-    font-family: 'Pacifico', cursive;
-    font-weight: 900;
-    font-size: 65px;
-    
+    animation-name: sess-log;
+    animation-duration: 1s;
 }
 a {
     text-decoration: none;
     color: #3897f0;
 }
+.Alexander > a {   
+    font-family: 'Pacifico', cursive;
+    font-weight: 900;
+    font-size: 65px;
+    color: black;
+    transition: color 2s;
+    margin-bottom: 20px;
+}
+.Alexander > a:hover {
+    color: #3897f0;
+}
 .greeting-mesage {
+    padding-top: 30px;
     color: #999;
     text-align: center;
     font-weight: 600;
@@ -94,6 +179,9 @@ a {
     line-height: 20px;
 }
 .signup-container {
+    box-sizing: border-box;
+    padding: 20px 0;
+    margin-top: 20px;
     flex-wrap: wrap;
     border: 1px solid #e6e6e6;
     background-color: #ffffff;
@@ -102,23 +190,25 @@ a {
     display: flex;
     justify-content: center; 
     align-items: center;
-    flex-direction: column;
     text-align: center;
     color: #9d9d9d;
-    width: 350px;
+    width: 348px;
+    height: 100%;
 } 
 .login-container {
+    padding: 39px 0;
+    margin-top: 50px;
     border: 1px solid #e6e6e6;
     background-color: #ffffff;
     border-radius: 1px;
     display: flex;
-    justify-content: center; 
+    justify-content: space-around; 
     align-items: center;
     flex-direction: column;
     text-align: center;
     color: #9d9d9d;
     width: 350px;
-    height: 380px;
+    height: 100%;
 } 
 .log-input {
     height: 27px;
@@ -130,6 +220,44 @@ a {
     font-size: 12px;
     padding: 5px;
     color: #d3d3d3;
+}
+/* .email  {
+    position: absolute;
+    top: 237px;
+    left: 454px;
+    font-size: 14px;
+    pointer-events: none;
+    transition: .5s;
+}
+.password {
+    position: absolute;
+    top: 383px;
+    left: 454px;
+    color: red;
+    pointer-events: none;
+    transition: .5s;
+}
+.username {
+    position: absolute;
+    left: 454px;
+    top: 334px;
+}
+.fullname {
+    position: absolute;
+    left: 454px;
+    top: 285px;
+}
+.login-form > input:focus ~ .email {
+    top: 223px;
+    font-size: 10px;
+}
+.login-form > input:active ~ .email {
+    top: 224px;
+    font-size: 13px;
+    
+} */
+.login-form > label >input {
+    color:black;
 }
 .submit-button {
     margin: 15px 0;
@@ -149,6 +277,49 @@ a {
 .submit-button:focus {
     outline: 0;
 }
+.submit-button:hover {
+    background-color: red;
+}
+.demo-box {
+    border-top: 1px solid rgb(235, 235, 235);
+    width: 270px;
+    color: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+.demo-box > p {
+    color: rgb(182, 181, 181);
+    font-size: 13px;
+    font-weight: bold;
+    position: absolute; 
+    background: white;
+    padding: 15px; 
+    top: -21px;
+}
+.demo-button > i {
+    display: inline-block;
+    padding-right: 4px;
+}
+
+.demo-button {
+    background: none;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: #385185;
+    font-weight: bold;
+    /* position: absolute; */
+    top: 546px;
+    margin: top 10px;
+ 
+}
+.demo-button:hover {
+    cursor: pointer;
+}
 .underbox {
     margin: 20px 0px;
     border: 1px solid #e6e6e6;
@@ -161,11 +332,10 @@ a {
     text-align: center;
     color: #9d9d9d;
     height: 70px;
-  
     width: 352px;
 }
-.submit-button:hover {
-    background-color: red;
+.underbox > p {
+    color: #272727;
 }
 .footer{
     background-color: #FAFAFA;
@@ -177,6 +347,9 @@ a {
     font-weight: 600;
     padding-top: 30px;
     padding-bottom: 20px;
+}
+.login-box {
+    height: 100%;
 }
 .links {
     margin-left: 10px;
@@ -198,10 +371,25 @@ a {
     justify-content: center;
     margin-top: 15px;
 }
-.link-photos > img {
+.link-photos > a > img{
     height: 40px;
     margin: 4px;
 }
+.sep-log-form > .footer {
+    padding: 169px;
+}
+.sep-signup-form{
+ animation-name: sep-sess;
+ animation-duration: 1s;
+}
+.sep-log-form{
+ animation-name: sep-sess;
+ animation-duration: 1s;
+}
+.sep-signup-form > .footer {
+    padding: 159px;
+}
+
 
 
 

@@ -1,6 +1,6 @@
 import { connect }  from "react-redux";
 import React from "react";
-import { signup } from "../../actions/session_actions";
+import { signup, clearSessionErrors } from "../../actions/session_actions";
 import { Link } from "react-router-dom";
 import SessionForm from "./session_form";
 
@@ -11,6 +11,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
     processFrom: user => dispatch(signup(user))
 });
 

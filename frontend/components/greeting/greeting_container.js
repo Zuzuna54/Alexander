@@ -1,11 +1,8 @@
 import { connect } from "react-redux";
-import { logout, signup } from "../../actions/session_actions";
+import { logout, signup, clearSessionErrors, login } from "../../actions/session_actions";
 import Greeting from "./greetig";
 import React from "react";
 import { Link } from "react-router-dom"
-// const msp = ({ session, entities: { users } }) => ({
-//     currentUser: users[session.id]
-// })
 
 const msp = state => {
     const session = state.session;
@@ -20,8 +17,11 @@ const msp = state => {
 
 
 const mdp = dispatch => ({
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
     logout: () => dispatch(logout()),
-    processFrom: user => dispatch(signup(user))
+    processFrom: user => dispatch(signup(user)),
+    procesDemo: user => dispatch(login(user))
+
 })
 
 

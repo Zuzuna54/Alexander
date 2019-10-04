@@ -22,7 +22,10 @@ class Greeting extends React.Component {
             email: 'guestuser@appacademy.io',
             password: 'password'
         };
-        this.props.procesDemo(user);
+        this.props.procesDemo(user).then(() => {
+            this.props.history.push('/posts')
+        });
+    
     }
 
     componentDidMount() {
@@ -37,7 +40,9 @@ class Greeting extends React.Component {
 
     handleSubmit(e) {
         const user = Object.assign({}, this.state);
-        this.props.processFrom(user);
+        const path = "/posts"
+        this.props.processFrom(user).then(() => {this.props.history.push(path)
+         });
     }
 
     renderErrors() {
@@ -95,7 +100,7 @@ class Greeting extends React.Component {
                 </div>             
                 </form>
                     <div className='demo-box'>
-                    placeholder, not displayed
+                    nothing, is displayed
                     <p>OR</p>
                     </div>
                     <p onClick={this.handleDemo}className='demo-button'>
@@ -109,17 +114,17 @@ class Greeting extends React.Component {
                 <div className="app-links">
                     <p>Get the real app</p>
                     <div className="link-photos">
-                    <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo"><img src={window.app1} /></a>
+                    <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo" target="_blank"><img src={window.app1} /></a>
                     <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ut
                         m_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DXPxlUwAEAAE7BYcROqbd5bl
-                        -TwJy%26utm_content%3Dlo%26utm_medium%3Dbadge"><img src={window.app2} /></a> 
+                        -TwJy%26utm_content%3Dlo%26utm_medium%3Dbadge" target="_blank"><img src={window.app2} /></a> 
                     </div>
                 </div>        
             </div>
             </div>
                 <div className="footer">
-                    <a className="links" href="https://www.linkedin.com/in/gio-giorgobiani-282883153 ">LinkedIn</a>
-                    <a className="links" href="https://github.com/Zuzuna54">Github</a>
+                    <a className="links" href="https://www.linkedin.com/in/gio-giorgobiani-282883153" target="_blank">LinkedIn</a>
+                    <a className="links" href="https://github.com/Zuzuna54" target="_blank">Github</a>
                     <p className="footer-mes">© 2019 INSTAGRAM FROM FACEBOOK</p>
                 </div>
             </div>

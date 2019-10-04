@@ -1,13 +1,17 @@
 import { login, signup, logout } from "./actions/session_actions"
+import { fetchAllPosts } from './actions/post_actions'
 import React from "react";
 import ReactDOM from "react-dom";
 import configreStore from "./store/store"
 import Root from "./components/root";
+import { fetchPosts } from "./util/post_api_util"
 
 document.addEventListener("DOMContentLoaded", () => {
     window.logout = logout
     window.login = login
     window.signup = signup
+    window.fetchAllPosts = fetchAllPosts
+    window.fetchPosts = fetchPosts
     let store;
     // debugger
     if(window.currentUser) {

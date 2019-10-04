@@ -1,0 +1,134 @@
+.errors{
+ list-style-type: none;
+ color: #ef5561;
+ margin-bottom: 15px;
+ animation-name: slidein;
+ animation-duration: 8s;
+ }
+
+ a {
+    text-decoration: none;
+    color: #3897f0;
+}
+
+.Alexander > a {   
+    font-family: 'Pacifico', cursive;
+    font-weight: 900;
+    font-size: 65px;
+    color: black;
+    transition: color 2s;
+    margin-bottom: 20px;
+}
+.Alexander > a:hover {
+    color: #3897f0;
+}
+
+.signup-container {
+    box-sizing: border-box;
+    padding: 20px 0;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-radius: 1px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    color: #9d9d9d;
+    width: 348px;
+    height: 100%;
+} 
+
+.login-container {
+    padding: 39px 0;
+    margin-top: 50px;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #9d9d9d;
+    width: 350px;
+    height: 100%;
+}
+
+.log-input {
+    height: 27px;
+    width: 270px;
+    margin: 5px;
+    background-color: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #ebebeb;
+    font-size: 12px;
+    padding: 5px;
+    color: #d3d3d3;
+}
+
+.login-form > label >input {
+    color:black;
+}
+
+.demo-box {
+    border-top: 1px solid rgb(235, 235, 235);
+    width: 270px;
+    color: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.login-form > label >input {
+    color:black;
+}
+
+.underbox {
+    margin: 20px 0px;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    border-radius: 1px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    color: #9d9d9d;
+    height: 70px;
+    width: 352px;
+}
+
+.underbox > p {
+    color: #272727;
+}
+
+.login-box {
+    height: 100%;
+}
+.links {
+    margin-left: 10px;
+    color: #003569;
+}
+
+.login-link {
+    margin-left: 10px;
+}
+
+.app-links {
+    text-align: center;
+}
+.link-photos {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.link-photos > a > img{
+    height: 40px;
+    margin: 4px;
+}

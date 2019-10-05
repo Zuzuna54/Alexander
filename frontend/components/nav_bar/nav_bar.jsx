@@ -19,12 +19,12 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <nav className="navbar">
+            <nav id ="navbar">
                 <div onClick={this.routeChange} className="logo">
                     <div>
                         <img className="sub-logo" src={window.logo} />
                     </div> 
-                    <div className="sublogo-text">
+                    <div id="sublogo-text">
                         Alexander
                     </div>
                 </div>

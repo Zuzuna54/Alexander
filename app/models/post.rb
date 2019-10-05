@@ -1,9 +1,11 @@
 class Post < ApplicationRecord
-    validates :author_id, :image_url, presence: true
+    validates :user_id, :image_url, presence: true
 
-    # belongs_to :user,
-    # foreign_key: :author_id
-
-    # has_many :likes
-    # has_many :comments
+    belongs_to :user
+    has_many :likes
+    has_many :comments
+    
+    has_many :likers, 
+    through: :likes,
+    source: :user
 end

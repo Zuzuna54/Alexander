@@ -1,12 +1,23 @@
 class User < ApplicationRecord
-    
+  
+  attr_reader :password
   validates :username, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true } 
   after_initialize :ensure_session_token
 
-  attr_reader :password
+  has_many :posts
+  has_many :comments
+  has_many :likes
 
+  has_many :liked_posts,
+  through: :likes,
+  source: :post
+
+  # has_many :liked_comments,
+  # through
+ 
+  
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)

@@ -1,8 +1,9 @@
 class Api::PostsController < ApplicationController
+    before_action :ensure_logged_in
     
     def create
         @post = Post.new(post_params)
-        @post.author_id = current_user.id
+        @post.user_id = current_user.id
         if @post.save
             render :show, status: 200 
         else 
@@ -21,19 +22,19 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all
-        # comments = []
-        # @users = []
-        # @likes =[] 
+        @comments = []
+        @users = []
+        @likes =[] 
 
-        # @posts.each do |post|
-        #     @users << post.user 
-        #     post.comments.each do |comment|
-        #         @comments << comment 
-        #     end 
-        #     post.likes.each do |like|
-        #         @likes << like
-        #     end 
-        # end 
+        @posts.each do |post|
+            @users << post.user 
+            post.comments.each do |comment|
+                @comments << comment 
+            end 
+            post.likes.each do |like|
+                @likes << like
+            end 
+        end 
         render :index, status: 200 
     end
 

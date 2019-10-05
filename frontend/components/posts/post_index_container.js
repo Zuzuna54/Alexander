@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 
 const msp = state =>{ 
-   debugger 
+//    debugger 
     return ({
         posts: state.entities.posts,
         users: state.entities.users

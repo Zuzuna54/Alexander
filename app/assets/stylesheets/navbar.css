@@ -1,17 +1,19 @@
 
-.navbar {
-    flex-direction: row;
+#navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background-color: #fff;
     border-bottom: 1px solid #e6e6e6;
-    height: 78px;
-    min-width: 100%;
-    position: sticky;
     transition: height 0.2s ease-in-out;
     animation-name: slidedown;
-    animation-duration: 1s;
+    animation-duration: 1s; 
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px 10px; /* Large padding which will shrink on scroll (using JS) */
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    margin-bottom: 20px;
 }
 
 .logo {
@@ -22,18 +24,17 @@
     margin-left: 13px;
 }
 .sub-logo {
-    
     height: 30px;
 }
-.sublogo-text{
+#sublogo-text{
     align-items: center;
     border-left: 1px solid #929292;
     margin-left: 17px;
     height: auto;
     padding: 5px 19px;
     font-family: 'Pacifico', cursive;
-    font-size: 16px;
-    font-size: 22px;
+    transition: 0.4s;
+    font-size: 24px;
     font-weight: 900;
 }
 
@@ -48,6 +49,7 @@
     justify-content: end;
     flex-direction: row-reverse;
     margin-right: 13px;
+    padding-right: 10px;
 }
 
 .logout-button {

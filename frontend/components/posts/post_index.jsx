@@ -5,18 +5,9 @@ import NavBarContainer from "../nav_bar/nav_bar_container"
 class PostIndex extends React.Component { 
     constructor(props){
         super(props)
-        this.state = { posts: this.props.posts }
-        console.log(this.state)
-        debugger
-    }
-
-    componentDidMount(){
-        this.props.fetchAllPosts().then(res => {
-
-            this.setState({ posts: res.posts });
-            // console.log(this.state.posts);
-            // this.posts = this.state.posts
-        })
+        // this.state = { posts: this.props.posts }
+        console.log(props)
+        // debugger
     }
 
     render(){

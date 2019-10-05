@@ -8,6 +8,8 @@ Rails.application.config.assets.precompile += %w( buttons.css )
 Rails.application.config.assets.precompile += %w( footer.css )
 Rails.application.config.assets.precompile += %w( forms.css )
 Rails.application.config.assets.precompile += %w( splash_page.css )
+Rails.application.config.assets.precompile += %w( navbar.css )
+Rails.application.config.assets.precompile += %w( post_box.css )
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.

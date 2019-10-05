@@ -7,7 +7,6 @@ import
 
  const sessionReducer = (state = defaulState, action) => {
     const oldState = Object.freeze(state);
-    // debugger
     switch(action.type) {
         case RECEIVE_CURRENT_USER:
             return { id: action.user.id };

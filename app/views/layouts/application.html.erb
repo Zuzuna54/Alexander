@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "animations" %>
+    <%= stylesheet_link_tag "navbar" %>
     <%= stylesheet_link_tag "buttons" %>
     <%= stylesheet_link_tag "footer" %>
     <%= stylesheet_link_tag "forms" %>
     <%= stylesheet_link_tag "reset" %>
     <%= stylesheet_link_tag "splash_page"%>
+    <%= stylesheet_link_tag "post_box"%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -19,6 +21,12 @@
   window.splash1 = "<%= image_url('splash_img.png') %>";
   window.splash2 = "<%= image_url('splash_img1.jpg') %>";
   window.splash3 = "<%= image_url('splash_img2.jpg') %>";
+  window.logo = "<%= image_url('logo.png') %>";
+  window.action = "<%= image_url('action.png') %>";
+  window.profile = "<%= image_url('profile.png') %>";
+  window.profile = "<%= image_url('profile.png') %>";
+  window.add = "<%= image_url('add.png') %>";
+  window.discover = "<%= image_url('discover.png') %>";
 </script>
 
 

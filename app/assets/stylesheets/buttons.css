@@ -42,4 +42,6 @@
 
 .demo-button:hover {
     cursor: pointer;
+    animation-name: jumpout;
+    animation-duration: 0.5s;
 }

@@ -2,10 +2,9 @@ import { RECEIVE_POST, RECEIVE_ALL_POSTS, RECEIVE_POST_ERRORS, REMOVE_POST_ERROR
 
 const postErrorsReducer = (state = [], action) => {
     Object.freeze(state);
-    debugger
     switch (action.type) { 
+        
         case RECEIVE_POST_ERRORS:
-            // debugger
             return action.postErrors;
         case RECEIVE_ALL_POSTS:
             return [];
@@ -14,7 +13,6 @@ const postErrorsReducer = (state = [], action) => {
         case RECEIVE_POST:
             return [];
         default:
-            // debugger
             return state;
     }
 };

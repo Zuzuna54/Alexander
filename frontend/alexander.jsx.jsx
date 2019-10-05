@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchAllPosts = fetchAllPosts
     window.fetchPosts = fetchPosts
     let store;
-    // debugger
     if(window.currentUser) {
         const preloadedState = {
             entities: {

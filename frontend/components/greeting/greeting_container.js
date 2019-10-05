@@ -11,7 +11,6 @@ const msp = state => {
     const formType = "Sign Up";
     const navLink = (<Link to="/login"> Log in if you alrady signed up! </Link>);
     const currentUser = state.entities.users[session.id]
-    // debugger
     return ({currentUser, errors, formType, navLink})
 }
 

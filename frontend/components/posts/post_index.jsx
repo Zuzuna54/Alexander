@@ -5,18 +5,56 @@ import NavBarContainer from "../nav_bar/nav_bar_container"
 class PostIndex extends React.Component { 
     constructor(props){
         super(props)
-        this.posts = this.props.posts
+        this.state = { posts: this.props.posts }
+        console.log(this.state)
+        debugger
     }
 
     componentDidMount(){
-        this.props.fetchAllPosts()
+        this.props.fetchAllPosts().then(res => {
+
+            this.setState({ posts: res.posts });
+            // console.log(this.state.posts);
+            // this.posts = this.state.posts
+        })
     }
 
     render(){
+       
+        console.log(this.props.posts)
         return (
             <div>
             <NavBarContainer /> 
-            <h1>these are posts</h1> 
+           
+            <div className="feed"> 
+               
+                <div className="post-box">
+                    <div className="post-header">
+                        this is post header 
+                    </div>
+                    <div className="post-picture">
+                        this is phost picture
+                    </div>
+                    <div className="funk-box">
+                        <div className="likes-bar">
+                            this is likes bar
+                        </div>
+                        <div className="likes-info">
+                            this is likes info
+                        </div>
+                        <div className="comment-box">
+                            this is comments box
+                        </div>
+                        <div className ="comment-timer">
+                            this is comment timer
+                        </div>
+                        <div className="add-comment">
+                            add commnet goes here
+                        </div>
+                    </div>
+                </div>
+                </div>
+        
             </div>)
 
     }

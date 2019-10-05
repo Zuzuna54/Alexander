@@ -129,7 +129,6 @@ class Greeting extends React.Component {
                 </div>
             </div>
         )
-        // debugger
         const personalGreeting = () => (
             <div className="header=group">
                 <h2 className="greeting">Hi, { this.props.currentUser.username}</h2>

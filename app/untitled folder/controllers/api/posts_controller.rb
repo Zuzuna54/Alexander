@@ -1,5 +1,4 @@
 class Api::PostsController < ApplicationController
-    before_action :ensure_logged_in
     
     def create
         @post = Post.new(post_params)
@@ -22,19 +21,19 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all
-        @comments = []
-        @users = []
-        @likes =[] 
-        debugger
-        @posts.each do |post|
-            @users << post.user 
-            post.comments.each do |comment|
-                @comments << comment 
-            end 
-            post.likes.each do |like|
-                @likes << like
-            end 
-        end 
+        # comments = []
+        # @users = []
+        # @likes =[] 
+
+        # @posts.each do |post|
+        #     @users << post.user 
+        #     post.comments.each do |comment|
+        #         @comments << comment 
+        #     end 
+        #     post.likes.each do |like|
+        #         @likes << like
+        #     end 
+        # end 
         render :index, status: 200 
     end
 

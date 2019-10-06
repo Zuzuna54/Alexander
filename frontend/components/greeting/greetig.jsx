@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../footer/footer";
+import AppLinks from '../app_links/app_links';
 
 class Greeting extends React.Component {
     constructor(props){
@@ -58,7 +60,7 @@ class Greeting extends React.Component {
     }
     
     render() {   
-        const sessionLinks = () => (
+        return (
             <div>
             <div className ="splash-page">
                 <div className="splash-photos"> 
@@ -110,32 +112,12 @@ class Greeting extends React.Component {
                 <p>Already Have an account?   </p>
                 <Link className="login-link" to="/login">Log in</Link>
                 </nav>  
-                <div className="app-links">
-                    <p>Get the real app</p>
-                    <div className="link-photos">
-                    <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo" target="_blank"><img src={window.app1} /></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ut
-                        m_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DXPxlUwAEAAE7BYcROqbd5bl
-                        -TwJy%26utm_content%3Dlo%26utm_medium%3Dbadge" target="_blank"><img src={window.app2} /></a> 
-                    </div>
-                </div>        
+                <AppLinks />
             </div>
             </div>
-                <div className="footer">
-                    <a className="links" href="https://www.linkedin.com/in/gio-giorgobiani-282883153" target="_blank">LinkedIn</a>
-                    <a className="links" href="https://github.com/Zuzuna54" target="_blank">Github</a>
-                    <p className="footer-mes">© 2019 INSTAGRAM FROM FACEBOOK</p>
-                </div>
+                <Footer />
             </div>
         )
-        const personalGreeting = () => (
-            <div className="header=group">
-                <h2 className="greeting">Hi, { this.props.currentUser.username}</h2>
-                <button className="greeting-button" onClick={this.props.logout}>Log Out</button>
-            </div>
-        )
-       
-        return this.props.currentUser ? personalGreeting() : sessionLinks();
     }
 }
 

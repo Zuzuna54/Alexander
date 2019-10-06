@@ -1,5 +1,7 @@
 import React from "react";
+import Footer from "../footer/footer"
 import { Link, withRouter} from "react-router-dom";
+import AppLinks from "../app_links/app_links";
 
 
 class SessionForm extends React.Component {
@@ -76,21 +78,9 @@ class SessionForm extends React.Component {
                     <div className = "underbox">
                     <p >Don't have and acount?<span className="login-link">{this.props.navLink}</span></p> 
                     </div>
-                    <div className="app-links">
-                        <p>Get the real app</p>
-                        <div className="link-photos">
-                            <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo"><img src={window.app1} /></a>
-                            <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source
-                                %3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DXPxlUwAEAAE7BYcROqbd5bl-TwJy%26utm_
-                                content%3Dlo%26utm_medium%3Dbadge"><img src={window.app2} /></a> 
-                        </div>
-                    </div>   
-            </div> 
-                <div className="footer">
-                    <a className="links" href="https://www.linkedin.com/in/giorgi-giorgobiani-282883153/">LinkedIn</a>
-                    <a className="links" href="https://github.com/Zuzuna54">Github</a>
-                    <p className="footer-mes">© 2019 INSTAGRAM FROM FACEBOOK</p>
-                </div>
+                  <AppLinks />   
+            </div>
+                <Footer />
             </div>
             
         )
@@ -126,24 +116,12 @@ class SessionForm extends React.Component {
                         </div>
                     </form>
                 </div>
-                    <div className="underbox">
-                    <p>Have an account? <span className="login-link">{this.props.navLink} </span></p>
-                    </div>
-                    <div className="app-links">
-                        <p>Get the real app</p>
-                        <div className="link-photos">
-                            <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo" target="_blank"><img src={window.app1} /></a>
-                            <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source
-                                %3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DXPxlUwAEAAE7BYcROqbd5bl-TwJy%26utm_
-                                content%3Dlo%26utm_medium%3Dbadge" target="_blank"><img src={window.app2} /></a> 
-                        </div>
-                    </div>   
+                <div className="underbox">
+                <p>Have an account? <span className="login-link">{this.props.navLink} </span></p>
+                </div>    
+                <AppLinks /> 
             </div>
-                <div className="footer">
-                    <a className="links" href="https://www.linkedin.com/in/giorgi-giorgobiani-282883153/" target="_blank">LinkedIn</a>
-                    <a className="links" href="https://github.com/Zuzuna54" target="_blank">Github</a>
-                    <p className="footer-mes">© 2019 INSTAGRAM FROM FACEBOOK</p>
-                </div>
+                <Footer />
             </div>
         )
 

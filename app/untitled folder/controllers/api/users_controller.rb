@@ -4,21 +4,9 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             login!(@user)
-            render "api/posts/index", status: 200
+            render "api/users/show"
         else 
             render json: @user.errors.full_messages, status: 422
-        end
-    end
-
-
-    def show 
-        @posts = []
-        @user = User.find_by(id: params[id])
-        if @user 
-            @posts = @user.posts
-            render :show
-        else
-            render json: ["User not found"], status: 404
         end
     end
 

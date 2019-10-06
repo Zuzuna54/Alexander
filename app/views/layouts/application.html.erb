@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+              document.getElementById ("navbar").style.padding = "7px 10px";
+              document.getElementById("sublogo-text").style.fontSize = "16px";
+          } else {
+              document.getElementById("navbar").style.padding = "23px 10px";
+              document.getElementById("sublogo-text").style.fontSize = "22px";
+          }
+        }
+    </script>
+      <script type="text/javascript">
+      window.app1 = "<%= image_url('appstore_1.png') %>";
+      window.app2 = "<%= image_url('appstore_2.png') %>";
+      window.splash1 = "<%= image_url('splash_img.png') %>";
+      window.splash2 = "<%= image_url('splash_img1.jpg') %>";
+      window.splash3 = "<%= image_url('splash_img2.jpg') %>";
+      window.logo = "<%= image_url('logo.png') %>";
+      window.action = "<%= image_url('action.png') %>";
+      window.profile = "<%= image_url('profile.png') %>";
+      window.profile = "<%= image_url('profile.png') %>";
+      window.add = "<%= image_url('add.png') %>";
+      window.discover = "<%= image_url('discover.png') %>";
+    </script>
+
+    <title>Alexander</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "animations" %>
+    <%= stylesheet_link_tag "navbar" %>
+    <%= stylesheet_link_tag "buttons" %>
+    <%= stylesheet_link_tag "footer" %>
+    <%= stylesheet_link_tag "forms" %>
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "splash_page"%>
+    <%= stylesheet_link_tag "post_box"%>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <div class="scripts">
+    <%# <script src="app/views/layouts/scripts.html.erb"></script> %>
+    </div>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.sep-log-form > .footer {
+    padding: 169px;
+}
+
+.footer{
+    background-color: #FAFAFA;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-mes {
+    color: #999;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+.sep-signup-form > .footer {
+    padding: 159px;
+}

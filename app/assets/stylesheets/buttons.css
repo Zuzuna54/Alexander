@@ -1,0 +1,47 @@
+.submit-button {
+    margin: 15px 0;
+    background-color: #3897f0;
+    width: 100px;
+    color: #ffffff;
+    height: 30px;
+    width: 270px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: background-color 2s;
+}
+.submit-button:hover {
+    cursor: pointer;
+}
+.submit-button:focus {
+    outline: 0;
+}
+
+.submit-button:hover {
+    background-color: red;
+}
+
+
+.demo-button > i {
+    display: inline-block;
+    padding-right: 4px;
+}
+
+.demo-button {
+    background: none;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: #385185;
+    font-weight: bold;
+    /* position: absolute; */
+    top: 546px;
+    margin: top 10px;
+ 
+}
+
+.demo-button:hover {
+    cursor: pointer;
+    animation-name: jumpout;
+    animation-duration: 0.5s;
+}

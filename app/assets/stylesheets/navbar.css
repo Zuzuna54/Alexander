@@ -1,0 +1,74 @@
+
+#navbar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+    transition: height 0.2s ease-in-out;
+    animation-name: slidedown;
+    animation-duration: 1s; 
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px 10px; /* Large padding which will shrink on scroll (using JS) */
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 13px;
+}
+.sub-logo {
+    height: 30px;
+}
+#sublogo-text{
+    align-items: center;
+    border-left: 1px solid #929292;
+    margin-left: 17px;
+    height: auto;
+    padding: 5px 19px;
+    font-family: 'Pacifico', cursive;
+    transition: 0.4s;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.search {
+    width: 33%;
+    text-align: center;
+}
+
+.nav-menu {
+    width: 33%;
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    margin-right: 13px;
+    padding-right: 10px;
+}
+
+.logout-button {
+    height: 30px;
+    align-items: right;
+    cursor: pointer;
+}
+
+.profile {
+    height: 29px;
+    cursor: pointer;
+    margin-right: 12px;
+    margin-left: 12px;
+}.add-post {
+    height: 27px;
+    cursor: pointer;
+}
+.discover {
+    height: 30px;
+    margin-right: 24px;
+    cursor: pointer;
+}

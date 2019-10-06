@@ -1,0 +1,67 @@
+.splash-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+  min-height: 100vh;
+  contain: content;
+}
+
+.splash-photos {
+  padding-top: 3%;
+  margin: auto;
+  position: relative;
+  margin-right: 15px;
+  animation-name: splash-phot;
+  animation-duration: 1s;
+}
+
+.top {
+    position: absolute;
+    left: 122px;
+    width: 240px;
+    top: 114px;
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-direction: alternate;
+}
+
+.middle {
+    position: absolute;
+    left: 122px;
+    width: 240px;
+    top: 114px;
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 9s;
+    animation-direction: alternate;
+}
+
+.greeting-mesage {
+    padding-top: 30px;
+    color: #999;
+    text-align: center;
+    font-weight: 550;
+    font-size: 17px;
+    margin: 0 40px 10px;
+    line-height: 20px;
+    font-family: sans-serif;
+}
+
+.session-container{
+    margin: auto;
+    width: 350px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: sess-log;
+    animation-duration: 1s;
+}
+
+.login-link {
+    margin-left: 10px;
+}

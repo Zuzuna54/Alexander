@@ -7,7 +7,6 @@ class PostIndex extends React.Component {
         super(props)
         this.state = { posts: this.props.posts }
         console.log(this.state)
-    
     }
 
   

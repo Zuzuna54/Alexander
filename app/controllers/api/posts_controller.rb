@@ -25,9 +25,9 @@ class Api::PostsController < ApplicationController
         @comments = []
         @users = []
         @likes =[] 
-        debugger
         @posts.each do |post|
             @users << post.user 
+           
             post.comments.each do |comment|
                 @comments << comment 
             end 

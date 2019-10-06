@@ -29,7 +29,7 @@ class NavBar extends React.Component {
                     </div>
                 </div>
                     
-                <div className="search"><input type="text"/></div>
+                <SearchBarContainer />
                 <div className="nav-menu">
                     <div className="logout">
                         <img onClick={this.handleLogout} className="logout-button" 

@@ -22,6 +22,15 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def search 
+        @users = User.search(params[:username])
+        if @users.any? 
+            render :search, status: 200
+        else 
+            render json: {users: { none: '404'}}, status: 200
+        end 
+    end 
+
     private 
     def user_params 
         params.require(:user).permit(:username, :password, :bio, :email, :full_name)

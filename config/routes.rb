@@ -8,5 +8,6 @@ Rails.application.routes.draw do
       resources :posts, only: [:create, :destroy, :show, :index, :update]
       resources :comments, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
+      get 'search/:username', to: 'users#search'
   end
 end

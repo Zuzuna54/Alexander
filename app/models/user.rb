@@ -48,6 +48,13 @@ class User < ApplicationRecord
     self.save! 
     self.session_token
   end
+
+  def self.search(query)
+    query = query + "%"
+    users = User.where("LOWER(username) LIKE LOWER(?)", query)
+    .order("users.created_at DESC")
+    return users 
+  end 
 end
 
 

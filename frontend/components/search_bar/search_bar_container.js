@@ -1,13 +1,13 @@
-// // import { searchUsers } from '../../actions/user_actions';
-// import { connect } from 'react-redux';
-// import SearchBar from './search_bar';
+import { searchUsers } from '../../actions/user_actions';
+import { connect } from 'react-redux';
+import SearchBar from './search_bar';
 
-// const msp = state => ({
-//     searchResults: state.entities.userSearch
-// });
+const msp = state => ({
+    searchResults: state.entities.search
+});
 
-// const mdp = dispatch => ({
-//     // searchUsers: username => dispatch(searchUsers(username))
-// });
+const mdp = dispatch => ({
+    searchUsers: username => dispatch(searchUsers(username))
+});
 
-// export default connect(msp, mdp)(SearchBar); 
+export default connect(msp, mdp)(SearchBar); 

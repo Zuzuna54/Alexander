@@ -6,10 +6,37 @@ import React from  "react";
 class PostsIndexItem extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            longCaption: false
+        }
+        this.cropCaption = this.cropCaption.bind(this)
+    }
+
+
+    cropCaption() {
+        let caption = this.props.post.caption
+        if (caption.length > 99 && this.state.longCaption === false) {
+            return (
+                <p>
+                    <strong>{this.props.user.username} </strong>
+                    {caption.slice(0, 100) + " ... "}
+                    <em style={{ color: '#999999' }}
+                        onClick={() => this.setState({ longCaption: true })}>
+                        more
+                    </em>
+                </p>
+            );
+        } else {
+            return (
+                <p>
+                    <strong>{this.props.user.username} </strong>
+                    {caption}
+                </p>
+            );
+        }
     }
 
     render () {
-        
         console.log(this.props)
         return (
         <div className="feed">
@@ -19,7 +46,8 @@ class PostsIndexItem extends React.Component {
                     <div className="user-info">
                         <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/>
                         <div>
-                        {this.props.user.username }
+                        <div>{this.props.user.username}</div>
+                        <div className="location">{this.props.post.location}</div>
                         </div>
                     </div>
                     <img src={window.menu_bar}/>
@@ -29,11 +57,13 @@ class PostsIndexItem extends React.Component {
                 </div>
                 <div className="funk-box">
                     <div className="likes-bar">
-                        <div>
-                            left 
-                        </div>
-                        <div>
-                            right
+                        <div className="likes-left">
+                            <img src={window.like} />
+                            <img src={window.comment} />
+                            <img src={window.share} />
+                        </div >
+                        <div className="likes-right">
+                            <img src={window.save} />
                         </div>
                     </div>
                     <div className="likes-info">
@@ -41,7 +71,7 @@ class PostsIndexItem extends React.Component {
                     </div>
                     <div className="comment-box">
                         <div>
-                            {this.props.post.caption}
+                            {this.cropCaption()}
                         </div>
                         <div>
                             all comments

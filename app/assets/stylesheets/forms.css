@@ -85,10 +85,6 @@
     position: relative; 
 }
 
-.login-form > label >input {
-    color:black;
-}
-
 .underbox {
     margin: 20px 0px;
     border: 1px solid #e6e6e6;

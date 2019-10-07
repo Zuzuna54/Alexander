@@ -46,8 +46,8 @@
     z-index: 6; 
     background: white;  
     width: 241px; 
-    max-height: 362px;
-    overflow: scroll; 
+    max-height: 121px;
+    overflow-y: scroll;
     border-radius: 3px; 
     box-shadow: 0px 0px 23px -16px rgba(0,0,0,0.72);
     border: 1px solid rgb(235, 235, 235);

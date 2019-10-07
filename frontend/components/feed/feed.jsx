@@ -13,6 +13,7 @@ class Feed extends React.Component {
     }
 
     render () {
+        // console.log(this.state)
         return (
             <div>
                 <PostIndex posts={this.state.posts}/>

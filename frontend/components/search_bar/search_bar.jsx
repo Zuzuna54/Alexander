@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
             searchTarget: ""
         }
         this.debouncedSearch = this.debounce(this.handleSearch, 500);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
         this.clearQuery = this.clearQuery.bind(this);
     }
 
@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
         };
     }
 
-    handleChange(e) {
+    handleUpdate(e) {
         this.setState(
             { searchStr: e.target.value },
             () => this.debouncedSearch(this.state.searchStr));
@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
 
     handleSearch(query) {
         let loader = document.getElementById("search").children[2];
-        loader.src = "/images/cancel.png";
+        // loader.src = "/images/cancel.png";
         let results = document.getElementsByClassName('search-results')[0];
         if (query !== '') {
             this.props.searchUsers(query)
@@ -76,7 +76,7 @@ class SearchBar extends React.Component {
                 <input type="text"
                     placeholder="Search"
                     value={this.state.searchStr}
-                    onChange={this.handleChange} />
+                    onChange={this.handleUpdate} />
                 <img className="cancel-button" src={window.cancel} onClick={this.clearQuery} />
                 {this.renderSearchResult()}
             </div>

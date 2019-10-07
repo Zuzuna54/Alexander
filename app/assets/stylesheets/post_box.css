@@ -17,12 +17,40 @@
 .post-header {
     height: 6%;
     width: 100%;
-    background-color: darkgray;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+}
+.post-header > img {
+    height: 15px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.user-info > div {
+    margin-left: 15px;
+}
+.user-picture {
+    height: 39px;
+    margin-left: 15px;
+    border-radius: 31px;
+    border: 1px solid #e6e6e6;
 }
 .post-picture {
     height: 70%;
     width: 100%;
-    background-color: brown;
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+}
+.post-picture > img {
+    height: -webkit-fill-available;
+    width: inherit;
 }
 .funk-box {
     height: 24%;
@@ -43,6 +71,9 @@
     height: 40%;
     widows: 100%;
     background-color: cadetblue ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .comment-timer{
     height: 10%;

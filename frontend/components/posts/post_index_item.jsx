@@ -37,7 +37,7 @@ class PostsIndexItem extends React.Component {
     }
 
     render () {
-        console.log(this.props.post.photoUrl)
+        console.log(this.props)
         return (
         <div className="feed">
 
@@ -53,7 +53,7 @@ class PostsIndexItem extends React.Component {
                     <img src={window.menu_bar}/>
                 </div>
                 <div className="post-picture">
-                        <img src={this.props.post.photoUrl} />
+                    <img src={this.props.post.photoUrl} />
                 </div>
                 <div className="funk-box">
                     <div className="likes-bar">

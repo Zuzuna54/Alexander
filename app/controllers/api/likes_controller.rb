@@ -21,7 +21,7 @@ class Api::LikesController < ApplicationController
         end
     end
 
-    def 
+    
 
     private
 

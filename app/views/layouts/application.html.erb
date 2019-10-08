@@ -2,16 +2,7 @@
 <html>
   <head>
     <script>
-      window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-              document.getElementById("navbar").style.padding = "7px 10px";
-              document.getElementById("sublogo-text").style.fontSize = "16px";
-          } else {
-              document.getElementById("navbar").style.padding = "23px 10px";
-              document.getElementById("sublogo-text").style.fontSize = "22px";
-          }
-        }
+     
     </script>
     <script type="text/javascript">
       window.app1 = "<%= image_url('appstore_1.png') %>";
@@ -38,6 +29,7 @@
       window.share = "<%= image_url('share.png') %>";
       window.share = "<%= image_url('share.png') %>";
       window.save = "<%= image_url('save.png') %>";
+      window.camera = "<%= image_url('camera.png') %>";
     </script>
 
     <title>Alexander</title>
@@ -51,6 +43,7 @@
     <%= stylesheet_link_tag "reset" %>
     <%= stylesheet_link_tag "splash_page"%>
     <%= stylesheet_link_tag "post_box"%>
+    <%= stylesheet_link_tag "post_form"%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <div class="scripts">

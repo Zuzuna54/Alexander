@@ -1,11 +1,14 @@
 import React from "react";
-import SearchBarContainer from "../search_bar/search_bar_container"
+import SearchBarContainer from "../search_bar/search_bar_container";
+import PostFormContainer from "../post_form/post_form_container";
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.handleLogout = this.handleLogout.bind(this)
         this.routeChange = this.routeChange.bind(this)
+        this.handleCreate = this.handleCreate.bind(this)
+
     }
 
     handleLogout() {
@@ -15,6 +18,10 @@ class NavBar extends React.Component {
     routeChange() {
         let path = `/posts`;
         this.props.history.push(path);
+    }
+
+    handleCreate() {
+        document.getElementById("post-form").className = "show"
     }
 
     render() {
@@ -39,7 +46,8 @@ class NavBar extends React.Component {
                         <img className="profile" src={window.profile}/>
                     </div>
                     <div className ="add-post">
-                        <img className="add-post" src={window.add} />
+                        <img onClick={this.handleCreate} className="add-post" src={window.add} />
+                        <PostFormContainer />
                     </div>
                     <div className="dsicover-cont">
                         <img className="discover" src={window.discover} />

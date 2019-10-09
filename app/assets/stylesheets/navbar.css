@@ -7,13 +7,12 @@
     transition: height 0.2s ease-in-out;
     animation-name: slidedown;
     animation-duration: 1s; 
-    /* overflow: hidden; */
     background-color: #fff;
-    padding: 20px 10px; /* Large padding which will shrink on scroll (using JS) */
-    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
-    position: fixed; /* Sticky/fixed navbar */
+    padding: 20px 10px; 
+    transition: 0.4s; 
+    position: fixed; 
     width: 100%;
-    top: 0; /* At the top */
+    top: 0; 
     margin-bottom: 20px;
 }
 

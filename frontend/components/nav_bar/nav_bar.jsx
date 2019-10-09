@@ -50,8 +50,7 @@ class NavBar extends React.Component {
                         <img className="profile" src={window.profile}/>
                     </div>
                     <div className ="add-post">
-                        <div id="one" className="create">
-                           
+                        <div id="one" className="create">   
                             <img onClick={this.handleCreate} className="add-post" src={window.add} />
                         </div>
                         <PostFormContainer />

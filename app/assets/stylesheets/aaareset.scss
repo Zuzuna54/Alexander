@@ -101,12 +101,13 @@ input, select {
 }
 
 html,body {
-//   min-height:100%;
-//   height:100%;
-  
+
   font-family:helvetica neue, helvetica, arial, sans-serif;
   font-weight:200;
   &.modal-active {
+    overflow: hidden;
+  }
+  &.dropdown-active {
     overflow: hidden;
   }
 }

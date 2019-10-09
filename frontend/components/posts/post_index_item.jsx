@@ -1,7 +1,7 @@
 import React from  "react";
-
-
-
+import DropDownContainer from "../drop_down/drop_down_container";
+import CreateCommentFormContainer from "../comments/create_comment_form_container";
+import CommentIndexContainer from "../comments/comment_index_container";
 
 class PostsIndexItem extends React.Component {
     constructor(props){
@@ -9,14 +9,22 @@ class PostsIndexItem extends React.Component {
         this.state = {
             longCaption: false
         }
-        this.cropCaption = this.cropCaption.bind(this)
+        this.cropCaption = this.cropCaption.bind(this);
+        this.handleDropDown = this.handleDropDown.bind(this);
+        
     }
 
+    handleDropDown() {
+        $('.dropdown').click(function () {
+        var buttonId = $(this).attr('id');
+        $('#dropdown-container').removeAttr('class').addClass(buttonId);
+        $('body').addClass('dropdown-active');
+        })
+    }
 
     cropCaption() {
         let username;
         if (this.props.user !== undefined) {
-            console.log(this.props.user.username)
             username = this.props.user.username
         }
         let caption = this.props.post.caption
@@ -44,12 +52,10 @@ class PostsIndexItem extends React.Component {
     render () {
         let username;
         if(this.props.user !== undefined) {
-            console.log(this.props.user.username )
             username = this.props.user.username
         }
         return (
         <>
-
             <div className="post-box">
                 <div className="post-header">
                     <div className="user-info">
@@ -59,7 +65,9 @@ class PostsIndexItem extends React.Component {
                         <div className="location">{this.props.post.location}</div>
                         </div>
                     </div>
-                    <img src={window.menu_bar}/>
+                    <div id="five" className="dropdown" >
+                        <img onClick={this.handleDropDown} src={window.menu_bar}/>
+                    </div>
                 </div>
                 <div className="post-picture">
                     <img src={this.props.post.photoUrl} />
@@ -82,21 +90,15 @@ class PostsIndexItem extends React.Component {
                         <div>
                             {this.cropCaption()}
                         </div>
-                        <div>
-                            all comments
-                        </div>
-                        <div>
-                            last 2 comments
-                        </div>
+                            <CommentIndexContainer post={this.props.post} />
                     </div>
                     <div className="comment-timer">
                         {this.props.post.created_at}
                     </div>
-                    <div className="add-comment">
-                        add commnet goes here
-                    </div>
+                    <CreateCommentFormContainer post={this.props.post} />
                 </div>
             </div>
+            <DropDownContainer post={this.props.post} />
         </>
         )
     }

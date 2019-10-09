@@ -2,7 +2,7 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( reset.css )
+Rails.application.config.assets.precompile += %w( aaareset.css )
 Rails.application.config.assets.precompile += %w( animations.css )
 Rails.application.config.assets.precompile += %w( buttons.css )
 Rails.application.config.assets.precompile += %w( footer.css )

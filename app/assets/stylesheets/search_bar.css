@@ -74,12 +74,6 @@
     justify-content: center; 
     border-bottom: 1px solid rgb(235, 235, 235);
 }
-/* .searched-photo {
-    height: 32px;
-    width: 32px;
-    margin-left: 17px;
-    border-radius: 32px; 
-} */
 
 .search-field > p {
     font-size: 14px; 
@@ -101,17 +95,5 @@ cursor: pointer;
 :last-child {
     border-bottom: none; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 

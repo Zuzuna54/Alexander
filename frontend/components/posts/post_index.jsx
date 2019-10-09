@@ -21,17 +21,11 @@ class PostIndex extends React.Component {
         })
     }
 
-    // componentDidUpdate() {
-    //     if (this.state.posts !== this.props.posts) {
-    //         this.setState({ posts: this.props.posts })
-    //     }
-    // }
 
-    render(){ 
-        console.log(this.state)  
-        console.log(this.props)    
+    render(){   
         let posts = 0;
-        if (this.state.posts !== undefined) {  
+
+        if (this.state.posts !== undefined && this.state.posts !== null) {  
             posts = Object.values(this.props.posts.AllPosts) 
         }
         let allPosts;

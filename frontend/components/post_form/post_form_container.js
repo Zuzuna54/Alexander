@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { createPost } from "../../actions/post_actions";
+import { createPost, fetchAllPosts } from "../../actions/post_actions";
 import { withRouter } from "react-router-dom";
 import  PostFrom from "./post_form"
 
@@ -13,7 +13,8 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-    action: post => dispatch(createPost)
+    action: post => dispatch(createPost(post)),
+    fetchAllPosts: () => dispatch(fetchAllPosts())
 })
 
 export default withRouter(connect(msp, mdp)(PostFrom))

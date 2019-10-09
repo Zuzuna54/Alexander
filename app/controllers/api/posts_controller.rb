@@ -26,8 +26,9 @@ class Api::PostsController < ApplicationController
         @users = []
         @likes =[] 
         @posts.each do |post|
-            @users << post.user 
-           
+            if !@users.include?(post.user)
+                @users << post.user 
+            end
             post.comments.each do |comment|
                 @comments << comment 
             end 
@@ -35,6 +36,7 @@ class Api::PostsController < ApplicationController
                 @likes << like
             end 
         end 
+        
         render :index, status: 200 
     end
 

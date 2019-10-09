@@ -1,7 +1,7 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions'; 
 import { RECEIVE_USER } from "../actions/user_actions"
-import merge from "lodash";
+import { merge } from "lodash";
 
 const postsReducer = (state = {}, action) => {
     const oldState = Object.freeze(state);
@@ -19,9 +19,9 @@ const postsReducer = (state = {}, action) => {
             newState[action.comment.post_id].comment_ids = newCommentIds;
             return newState;
         case RECEIVE_ALL_POSTS:
-            return action.posts.AllPosts|| {};
+            return action.posts || {};
         case RECEIVE_POST:
-            return merge({}, state, { [action.post.post.id]: action.post.post });
+            return merge({}, state, { AllPosts: {[action.post.post.id]: action.post.post }});
         case REMOVE_POST:
             delete newState[action.post.id];
             return newState;

@@ -4,7 +4,6 @@ import React from "react";
 const SearchItem = (props) => {
     
     let { result } = props;
-    // debugger
     return (result.none === "404") ? (
         <div className="search-item">
             <div className="not-found-container">

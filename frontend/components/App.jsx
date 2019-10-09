@@ -16,7 +16,7 @@ const App = () => (
 
 
     <Switch>
-        <ProtectedRoute exact path="/posts" component={FeedContainer} />
+        <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
     </Switch>
     </div>
 )

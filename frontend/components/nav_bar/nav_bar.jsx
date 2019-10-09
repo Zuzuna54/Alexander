@@ -21,7 +21,11 @@ class NavBar extends React.Component {
     }
 
     handleCreate() {
-        document.getElementById("post-form").className = "show"
+        $('.create').click(function () {
+            var buttonId = $(this).attr('id');
+            $('#modal-container').removeAttr('class').addClass(buttonId);
+            $('body').addClass('modal-active');
+        })
     }
 
     render() {
@@ -46,7 +50,10 @@ class NavBar extends React.Component {
                         <img className="profile" src={window.profile}/>
                     </div>
                     <div className ="add-post">
-                        <img onClick={this.handleCreate} className="add-post" src={window.add} />
+                        <div id="one" className="create">
+                           
+                            <img onClick={this.handleCreate} className="add-post" src={window.add} />
+                        </div>
                         <PostFormContainer />
                     </div>
                     <div className="dsicover-cont">

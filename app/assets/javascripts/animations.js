@@ -8,3 +8,4 @@ function scrollFunction() {
         document.getElementById("sublogo-text").style.fontSize = "22px";
     }
 }
+

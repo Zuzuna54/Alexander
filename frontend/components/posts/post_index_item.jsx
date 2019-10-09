@@ -14,11 +14,16 @@ class PostsIndexItem extends React.Component {
 
 
     cropCaption() {
+        let username;
+        if (this.props.user !== undefined) {
+            console.log(this.props.user.username)
+            username = this.props.user.username
+        }
         let caption = this.props.post.caption
         if (caption.length > 99 && this.state.longCaption === false) {
             return (
                 <p>
-                    <strong>{this.props.user.username} </strong>
+                    <strong>{username ? username : (<> </>)} </strong>
                     {caption.slice(0, 100) + " ... "}
                     <em style={{ color: '#999999' }}
                         onClick={() => this.setState({ longCaption: true })}>
@@ -29,7 +34,7 @@ class PostsIndexItem extends React.Component {
         } else {
             return (
                 <p>
-                    <strong>{this.props.user.username} </strong>
+                    <strong>{username ? username : (<> </>)} </strong>
                     {caption}
                 </p>
             );
@@ -37,16 +42,20 @@ class PostsIndexItem extends React.Component {
     }
 
     render () {
-        console.log(this.props)
+        let username;
+        if(this.props.user !== undefined) {
+            console.log(this.props.user.username )
+            username = this.props.user.username
+        }
         return (
-        <div className="feed">
+        <>
 
             <div className="post-box">
                 <div className="post-header">
                     <div className="user-info">
                         <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/>
                         <div>
-                        <div>{this.props.user.username}</div>
+                        <div>{username ? username : (<> </>)}</div>
                         <div className="location">{this.props.post.location}</div>
                         </div>
                     </div>
@@ -88,7 +97,7 @@ class PostsIndexItem extends React.Component {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
         )
     }
 }

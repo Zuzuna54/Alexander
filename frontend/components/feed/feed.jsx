@@ -25,10 +25,10 @@ class Feed extends React.Component {
     }
 
     render () {
-        debugger
+        // debugger
         if(!isEqual({}, this.state.posts)) {
  
-        debugger
+        // debugger
         return (
             <div>
                 <PostIndex posts={this.state.posts} users={this.state.users}/>

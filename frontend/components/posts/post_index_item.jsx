@@ -24,6 +24,7 @@ class PostsIndexItem extends React.Component {
 
     cropCaption() {
         let username;
+        // console.log(this.props)
         if (this.props.user !== undefined) {
             username = this.props.user.username
         }
@@ -51,6 +52,7 @@ class PostsIndexItem extends React.Component {
 
     render () {
         let username;
+        // console.log(this.props)
         if(this.props.user !== undefined) {
             username = this.props.user.username
         }

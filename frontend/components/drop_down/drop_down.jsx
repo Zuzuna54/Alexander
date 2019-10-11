@@ -11,8 +11,8 @@ class DropDown extends React.Component {
 
     closeDropdown() {
         $('#dropdown-container').click(function () {
-            $('#dropdown-container').addClass('out');
-            $('body').removeClass('dropdown-active');
+        $('#dropdown-container').addClass('out');
+        $('body').removeClass('dropdown-active');
         });
     }
 
@@ -24,20 +24,30 @@ class DropDown extends React.Component {
         let  { currentUser, post } = this.props;
         // console.log(post.user_id)
         // console.log(currentUser.id)
+        // debugger
         return post.user_id === currentUser.id ? (
             <div onClick={this.deletePost} > Delete </div>
             ) : (
-             <> </> )
+            null)
     }
 
     render() {
+        // let { currentUser, post } = this.props;
+        // let deleteButton;
+        // if (post.user_id === currentUser.id) {
+        //     deleteButton = (<div onClick={this.deletePost} > Delete </div>)
+        // } else {
+        //     deleteButton = null;
+        // }
+        // debugger
         return (
             <div id="dropdown-container">
                 <div onClick={this.closeDropdown} className="dropdown-background">
                     <div className="modal">
                         <div> this is a dropdown </div>
                         <div>Go to Post</div>
-                        {this.renderDelete()}
+                        {/* {deleteButton} */}
+                        {this.renderDelete}
                     </div>
                 </div> 
             </div>

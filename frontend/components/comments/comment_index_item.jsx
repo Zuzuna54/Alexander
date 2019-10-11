@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { diffDate } from '../../util/general_util'; // need to write this 
+
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class CommentIndexItem extends React.Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         if (this.props.user === undefined) {
             return null;
         } else {
@@ -61,7 +61,7 @@ class CommentIndexItem extends React.Component {
                             </div>
                             <div className='ribbon'>
                                 <p id='dates'>
-                                    dates {/* {diffDate(this.props.comment.created_at)} */}
+                                    dates 
                                 </p>
                                 {this.renderDelete()}
                             </div>

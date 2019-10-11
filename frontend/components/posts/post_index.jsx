@@ -14,23 +14,33 @@ class PostIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllPosts().then(res => {
-            this.setState({ posts: res.posts });
+            // console.log(res)
+            this.setState({ posts: res.posts.AllPosts || {}});
         })
         this.props.fetchUsers().then(res => {
             this.setState({ users: res.users })
         })
     }
 
+    componentDidUpdate(ownProps){
+        // console.log(ownProps)
+        // console.log(this.state)
+    }
+
 
     render(){   
-        let posts = 0;
-
-        if (this.state.posts !== undefined && this.state.posts !== null) {  
-            posts = Object.values(this.props.posts.AllPosts) 
+        
+        let allPosts = [];
+        if(this.state.posts !== undefined) {
+            // console.log(this.state)
+            // console.log(Object.values(this.state))
+            allPosts = Object.values(this.state.posts)
+            // debugger
         }
-        let allPosts;
-        if(posts) {
-            allPosts = posts.map((post => {
+        
+        // console.log(allPosts)
+
+        const posts = allPosts.map((post => {
                 const user = this.props.users[post.user_id]
                 return <PostIndexItemContainer 
                 key={post.id}
@@ -38,13 +48,12 @@ class PostIndex extends React.Component {
                 post={post}
                 />
             })) 
-        }
-       
+      
             return (
                 <div className="page">
                 <NavBarContainer /> 
                 <div className="feed">
-                {allPosts}
+                {posts}
                 </div>
                 </div>
         )

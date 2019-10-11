@@ -41,7 +41,7 @@ class PostIndex extends React.Component {
  
         const posts = allPosts.map((post => {
                 const user = this.props.users[post.user_id]
-                // debugger
+            
                 return <PostIndexItemContainer 
                 key={post.id}
                 user={user}

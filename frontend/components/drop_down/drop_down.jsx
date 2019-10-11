@@ -24,7 +24,7 @@ class DropDown extends React.Component {
     //     let  { currentUser, post } = this.props;
     //     console.log(currentUser);
     //     console.log(post)
-    //     debugger
+  
     //     return ((post.user_id === currentUser.id) ? (
     //         <div  onClick={this.deletePost} > Delete </div>
     //         ) : (null))
@@ -38,7 +38,7 @@ class DropDown extends React.Component {
         // } else {
         //     deleteButton = null;
         // }
-        // debugger
+  
         return (
             <div id={`dropdown-container`}>
                 <div onClick={this.closeDropdown} className="dropdown-background">

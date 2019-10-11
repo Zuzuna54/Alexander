@@ -4,7 +4,7 @@ import { removeComment } from '../../actions/comment_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-    // console.log(comments);
+    
     let comments = ownProps.post.comment_ids.map(
         id => state.entities.comments[id]);
 

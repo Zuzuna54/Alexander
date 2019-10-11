@@ -12,7 +12,7 @@
 .post-box {
     height: 1070px;
     width: 605px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     margin-bottom: 50px;
 }
 .post-header {
@@ -62,7 +62,7 @@
 .funk-box {
     height: 24%;
     width: 100%;
-    background-color: chocolate;
+    /* background-color: chocolate; */
 }
 .likes-bar {
     height: 20%;
@@ -87,17 +87,20 @@
 .likes-info {
     height: 11%;
     widows: 100%;
-    background-color: aqua;
+    border: 1px solid #e6e6e6;
+    /* background-color: aqua; */
+
 }
 .comment-box {
     height: 40%;
     widows: 100%;
-    background-color: cadetblue ;
+    /* background-color: cadetblue ; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #ffffff;
     border: 1px solid #e6e6e6;
+    overflow: scroll;
 }
 .comment-timer{
     height: 10%;

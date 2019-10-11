@@ -10,9 +10,7 @@ const postsReducer = (state = {}, action) => {
         case RECEIVE_USER:
             return merge({}, state, action.posts.AllPosts);
         case RECEIVE_COMMENT:
-            // console.log(action)
-            // console.log(newState)
-            newState.AllPosts[action.comment.post_id].comment_ids.push(action.comment.id);
+            newState[action.comment.post_id].comment_ids.push(action.comment.id)
             return newState;
         case REMOVE_COMMENT:
             let target = action.comment.id;
@@ -23,7 +21,7 @@ const postsReducer = (state = {}, action) => {
         case RECEIVE_ALL_POSTS:
             return action.posts.AllPosts || {};
         case RECEIVE_POST:
-            return merge({}, state, { AllPosts: {[action.post.post.id]: action.post.post }});
+            return merge({}, state, { [action.post.post.id]: action.post.post });
         case REMOVE_POST:
             delete newState[action.post.id];
             return newState;

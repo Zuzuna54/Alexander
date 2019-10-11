@@ -9,13 +9,11 @@ class CreateCommentForm extends React.Component {
         }
         this.props = props;
         this.handleUpdate = this.handleUpdate.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
         this.renderButton = this.renderButton.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit() {
-        // console.log(this.props)
         this.props.createComment(this.state)
         this.setState({
             body: ""
@@ -24,15 +22,16 @@ class CreateCommentForm extends React.Component {
 
     renderButton() {
         
-        return this.state.body === "" ? (
-            <div className="fake-button">
+        return this.state.body === '' ? (
+            <p className="fake-comment-button">
                 Post
-            </div>
+            </p>
         ) : (
-            <div className="real-button" onClick={this.handleSubmit}>
-                Post
-            </div>
-        )
+                <p onClick={this.handleSubmit}
+                    className="real-comment-button">
+                    Post
+            </p>
+            );
       
     }
 
@@ -41,9 +40,9 @@ class CreateCommentForm extends React.Component {
     } 
 
     render() {
-        // console.log(this.props)
+
         return (
-            <div className="create-comment">
+            <div className="comment-box-create">
                 <textarea
                 placeholder="Add a comment..."
                 onChange={this.handleUpdate}

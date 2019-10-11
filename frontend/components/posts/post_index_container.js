@@ -4,7 +4,7 @@ import PostIndex from './post_index';
 import { fetchUsers } from "../../actions/user_actions"
 
 const msp = state =>{  
-    // console.log(fetchAllPosts)
+
     return ({
         posts: state.entities.posts,
         users: state.entities.users

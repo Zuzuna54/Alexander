@@ -4,7 +4,6 @@ import { fetchUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
     let tempUser;
-    // console.log(ownPro÷ps);
     if (ownProps.comment === undefined) {
         tempUser = undefined;
     } else {

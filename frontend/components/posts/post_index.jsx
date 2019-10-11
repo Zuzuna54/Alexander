@@ -14,7 +14,7 @@ class PostIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllPosts().then(res => {
-            // console.log(res)
+
             this.setState({ posts: res.posts.AllPosts || {}});
         })
         this.props.fetchUsers().then(res => {
@@ -22,26 +22,26 @@ class PostIndex extends React.Component {
         })
     }
 
-    componentDidUpdate(ownProps){
-        // console.log(ownProps)
-        // console.log(this.state)
+    componentDidUpdate(prevProps){
+   
+        if(prevProps.posts !== this.props.posts) {
+
+            this.setState({posts: this.props.posts})
+        }
     }
 
 
     render(){   
-        
+     
         let allPosts = [];
         if(this.state.posts !== undefined) {
-            // console.log(this.state)
-            // console.log(Object.values(this.state))
             allPosts = Object.values(this.state.posts)
-            // debugger
         }
-        
-        // console.log(allPosts)
 
+ 
         const posts = allPosts.map((post => {
                 const user = this.props.users[post.user_id]
+                // debugger
                 return <PostIndexItemContainer 
                 key={post.id}
                 user={user}

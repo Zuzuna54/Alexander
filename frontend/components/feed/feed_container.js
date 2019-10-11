@@ -5,7 +5,7 @@ import { fetchAllPosts } from "../../actions/post_actions"
 import { fetchUsers } from "../../actions/user_actions"
 
 const msp = state => {
-    // debugger
+
     const posts = state.entities.posts;
     const users = state.entities.users;
     return { posts, users };

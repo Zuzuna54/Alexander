@@ -1,7 +1,6 @@
 .hidden {
     display: none;
 }
-
 .create-button {
   background: TRANSPARENT;
   BORDER: NONE;
@@ -128,10 +127,14 @@
       button {
         width: 100%;
         margin: 0;
-        margin-top: 30px;
         border-radius: 97px;
         line-height: 22px;
         height: 34px;
+        transition: background-color 0.4s;
+      }
+
+      .submit-button {
+        margin-top: 30px;
         transition: background-color 0.4s;
       }
     }

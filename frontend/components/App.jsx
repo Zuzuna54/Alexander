@@ -9,11 +9,11 @@ import FeedContainer from "./feed/feed_container";
 const App = () => (
     <div>
        
-        
+    <Switch >
         <AuthRoute exact path="/" component={GreetingContainer} />
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
-
+    </Switch>
 
     <Switch>
         <ProtectedRoute exact path="/posts" component={PostIndexContainer} />

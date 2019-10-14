@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
                     </form>
                 </div>
                     <div className = "underbox">
-                    <p >Don't have and acount?<span className="login-link">{this.props.navLink}</span></p> 
+                    <p >Don't have an acount?<span className="login-link">{this.props.navLink}</span></p> 
                     </div>
                   <AppLinks />   
             </div>

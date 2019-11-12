@@ -111,6 +111,7 @@ class PostShow extends React.Component {
                     </>
                 ); 
             } else {
+                console.log(this.props)
                 return(
                     <>
                         <NavBarContainer/>
@@ -123,9 +124,9 @@ class PostShow extends React.Component {
 
                                 <header>
                                     <div className="header-left">
-                                        <Link to={`/profile/${this.props.user.id}`}>
+                                        {/* <Link to={`/profile/${this.props.user.id}`}>
                                             <img src={this.props.user.profilePhoto}/>
-                                        </Link>
+                                        </Link> */}
                                         <div>
                                             <p>{this.props.user.username}</p>
                                             <p className="location">
@@ -133,9 +134,11 @@ class PostShow extends React.Component {
                                             </p>
                                         </div>
                                     </div>
-                                    <img src="/images/ellipsis.png"
+                                    <div className="dropdown">
+                                    <img  src={window.menu_bar}
                                         onClick={() => 
                                             this.changeSelected(this.props.post.id)}/>
+                                    </div>
                                 </header>
 
                                 <section>

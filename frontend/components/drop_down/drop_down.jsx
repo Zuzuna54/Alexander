@@ -31,21 +31,23 @@ class DropDown extends React.Component {
     // }
 
     render() {
-        // let { currentUser, post } = this.props;
-        // let deleteButton;
-        // if (post.user_id === currentUser.id) {
-        //     deleteButton = (<div onClick={this.deletePost} > Delete </div>)
-        // } else {
-        //     deleteButton = null;
-        // }
+        console.log(this.props)
+        let { currentUser, post } = this.props;
+        let deleteButton;
+        if (post.user_id === currentUser.id) {
+            deleteButton = (<div onClick={this.deletePost} > Delete </div>)
+        } else {
+            deleteButton = null;
+        }
   
         return (
             <div id={`dropdown-container`}>
                 <div onClick={this.closeDropdown} className="dropdown-background">
                     <div className="modal">
                         <div> this is a dropdown </div>
-                        {/* <div>Go to Post</div> */}
-                        {/* {deleteButton} */}
+                        <div onClick={() =>
+                            this.props.history.push(`/post/${this.props.post.id}`)}>Go to Post</div>
+                        {deleteButton}
                         {/* {this.renderDelete()} */}
                     </div>
                 </div> 

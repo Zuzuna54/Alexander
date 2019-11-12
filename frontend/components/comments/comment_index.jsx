@@ -11,7 +11,7 @@ class CommentIndex extends React.Component {
     }
 
     renderViewAllComments() {
-        if (this.props.match.path === "/home" && this.props.comments.length > 2) {
+        if (this.props.match.path === "/posts" && this.props.comments.length > 2) {
             return (
                 <p className="view-all-comments" onClick={() =>
                     this.props.history.push(`/post/${this.props.post.id}`)}>
@@ -22,7 +22,7 @@ class CommentIndex extends React.Component {
     }
 
     renderLatestDate() {
-        if (this.props.match.path === "/home" && this.props.comments.length >= 1) {
+        if (this.props.match.path === "/posts" && this.props.comments.length >= 1) {
             let lastCommentDate =
                 this.props.comments[this.props.comments.length - 1].created_at;
             let d = diffDate(lastCommentDate);
@@ -35,7 +35,7 @@ class CommentIndex extends React.Component {
 
     render() {
         let { comments, removeComment, match } = this.props;
-        if (match.path === "/home" && comments.length > 2) {
+        if (match.path === "/posts" && comments.length > 2) {
             comments = comments.slice(comments.length - 2);
         }
 

@@ -32,7 +32,6 @@ const postsReducer = (state = {}, action) => {
             newState[action.like.post_id].like_ids = newLikeIdsArr;
             return newState; 
         case RECEIVE_USER:
-            console.log(action.user.posts)
             return merge({}, state, action.user.posts);
         case RECEIVE_COMMENT:
             newState[action.comment.post_id].comment_ids.push(action.comment.id)

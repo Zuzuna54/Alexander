@@ -63,10 +63,6 @@
                 justify-content: flex-start;
                 align-items: center;
 
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
 
                 p {
                     margin-left: 16px;
@@ -80,15 +76,11 @@
                 }
             }
 
-            img {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-            }
         }
 
         section {
             width: 100%;
+            // height: 346px;
             overflow-y: scroll;
             display: flex; 
             flex-direction: column;
@@ -97,13 +89,11 @@
             padding-left: 16px;
             padding-right: 10px;
             box-sizing: border-box;
-            margin-bottom: 155px;
 
             .show-caption {
                 display: flex; 
                 justify-content: flex-start;
                 align-items: center; 
-                margin: 10px 0;
 
                 img {
                     width: 30px;
@@ -120,6 +110,7 @@
                     font-size: 15px;
                     width: 80%;
                     overflow-wrap: break-word;
+                    font-size: 15px;
 
                     div {
                         padding: 4px 0;
@@ -139,6 +130,29 @@
                         font-size: 12px;
                         color: #999;
                         padding-top: 5px;
+                    }
+                    .ribbon {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        strong {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #3897f0;
+                            padding-right: 30px;
+                        }
+
+                        strong:hover {
+                            cursor: pointer;
+                        }
+
+                        p {
+                            color: #999999; 
+                            font-size: 10px; 
+                            margin-left: 15px;
+                        }
                     }
                 }
             }
@@ -272,4 +286,14 @@
     strong:hover {
         cursor: pointer;
     }
+
+    p {
+        color: #999999; 
+        font-size: 10px; 
+        margin-left: 15px;
+    }
+}
+
+#show-username {
+    font-size: 14px;
 }

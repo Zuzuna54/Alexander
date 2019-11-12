@@ -2,12 +2,12 @@
 import React from 'react';
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import PostIndexItemContainer from "./post_index_item_container"
-
+import Footer from "../footer/footer"
 class PostIndex extends React.Component { 
     constructor(props){
         super(props)
         this.state  = {
-            posts: undefined,
+            posts: this.props.posts,
             users: {}
         }
     }
@@ -22,9 +22,7 @@ class PostIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-   
         if(prevProps.posts !== this.props.posts) {
-
             this.setState({posts: this.props.posts})
         }
     }
@@ -54,7 +52,9 @@ class PostIndex extends React.Component {
                 <div className="feed">
                 {posts}
                 </div>
+                <Footer />
                 </div>
+
         )
     } 
 }

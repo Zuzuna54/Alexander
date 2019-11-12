@@ -22,7 +22,6 @@ class ProfilePostItem extends React.Component {
     }
 
     render() {
-        // eslint-disable-next-line camelcase
         let {comment_ids, like_ids} = this.props.post; 
         return(
             <div className="profile-post-item" 
@@ -34,9 +33,9 @@ class ProfilePostItem extends React.Component {
 
                 <div className="post-stats hide-stats">
                     <div>
-                        <img src="/images/white_heart.png"/>
+                        <img src={window.heart}/>
                         <div>{like_ids.length}</div>
-                        <img src="/images/white_comment.png"/>
+                        <img src={window.comment}/>
                         <div>{comment_ids.length}</div>
                     </div>
                 </div>

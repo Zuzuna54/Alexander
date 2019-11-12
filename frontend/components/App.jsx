@@ -5,6 +5,7 @@ import LogInFormContainer from "./login_form_container/login_form_container";
 import SignUpFormContainer from "./login_form_container/signup_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import PostIndexContainer from "./posts/post_index_container";
+import PostShowContainer from './posts/post_show_container';
 import ProfileContainer from './profile/profile_container';
 const App = () => (
     <div>
@@ -18,7 +19,7 @@ const App = () => (
     <Switch>
         <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
         <ProtectedRoute path='/profile/:id' component={ProfileContainer} />
-        <ProtectedRoute path='/posts' component={PostIndexContainer} />
+        <ProtectedRoute path='/post/:id' component={PostShowContainer} />
     </Switch>
     </div>
 )

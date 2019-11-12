@@ -9,10 +9,10 @@ const msp = (state, ownProps) => {
     } else {
         tempUser = state.entities.users[ownProps.comment.user_id];
     }
-
+  
     return {
         user: tempUser,
-        currentUserId: state.session.currentUserId
+        currentUserId: state.session.id
     };
 };
 

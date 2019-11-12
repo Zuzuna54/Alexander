@@ -1,14 +1,15 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
-import CreatePostFormContainer from '../post_form/create_post_form_container';
+import CreatePostFormContainer from '../post_form/post_form_container';
 import { diffDate, reformatDate } from '../../util/general_util';
-import PopUpContainer from '../pop_up/pop_up_container';
+import DropDown from '../drop_down/drop_down_container';
 import EditPostForm from '../post_form/edit_post_form';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentFormContainer 
     from '../comments/create_comment_form_container';
 import LikeBarContainer from '../likes/like_bar_container';
+import Footer from '../footer/footer';
 
 class PostShow extends React.Component {
 
@@ -60,7 +61,7 @@ class PostShow extends React.Component {
         return this.state.selected === null ? (
             <></>
         ) : (
-            <PopUpContainer
+            <DropDown
                 postId={this.props.post.id}
                 closeModal={this.changeSelected} />
         );
@@ -104,10 +105,7 @@ class PostShow extends React.Component {
                         <NavBarContainer/>
                         {this.render404()}
                         <div className="footer">
-                            <a href="https://keyangsun.com">ABOUT ME</a>
-                            <a href="https://github.com/keyangsun">GITHUB</a>
-                            <a href="https://www.linkedin.com/in/keyangsun/">LINKEDIN</a>
-                            <p>@2019 FIESTAGRAM</p>
+                            <Footer />
                         </div>
                         <CreatePostFormContainer />
                     </>
@@ -179,10 +177,7 @@ class PostShow extends React.Component {
                         </div>
                         </div>
                         <div className="footer">
-                            <a href="https://keyangsun.com">ABOUT ME</a>
-                            <a href="https://github.com/keyangsun">GITHUB</a>
-                            <a href="https://www.linkedin.com/in/keyangsun/">LINKEDIN</a>
-                            <p>@2019 FIESTAGRAM</p>
+                          <Footer />
                         </div>
                         
                         {this.renderEditForm()}

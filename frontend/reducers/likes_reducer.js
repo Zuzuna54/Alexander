@@ -6,14 +6,12 @@ const likesReducer = (state = {}, action) => {
     Object.freeze(state); 
     switch(action.type) {
         case RECEIVE_ALL_POSTS: 
-            console.log(action)
             if (action.posts.likes === undefined) {
                 return state; 
             } else {
                 return action.posts.likes; 
             }
         case RECEIVE_POST: 
-            console.log(action)
             return merge({}, state, action.post.likes); 
         case RECEIVE_LIKE: 
             return merge({}, state, { [action.like.id]: action.like }); 

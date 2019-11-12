@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props);
+        // console.log(props)
         this.handleDelete = this.handleDelete.bind(this);
         this.renderDelete = this.renderDelete.bind(this);
     }
@@ -22,7 +23,9 @@ class CommentIndexItem extends React.Component {
 
     renderDelete() {
         let { currentUserId, user } = this.props;
-
+        
+        console.log(currentUserId === user.id)
+        
         return currentUserId === user.id ? (
             <strong onClick={() => this.handleDelete()}>
                 Delete

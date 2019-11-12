@@ -3,6 +3,7 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 import CreatePostFormContainer from '../post_form/post_form_container';
 import ProfileHeader from './profile_header';
 import ProfilePosts from './profile_posts';
+import Footer from "../footer/footer"
 
 class Profile extends React.Component {
     constructor(props) {
@@ -42,10 +43,8 @@ class Profile extends React.Component {
                     <ProfilePosts posts={this.props.posts}/>
                     <CreatePostFormContainer/>
                     <div className="footer">
-                        <a href="https://keyangsun.com">ABOUT ME</a>
-                        <a href="https://github.com/keyangsun">GITHUB</a>
-                        <a href="https://www.linkedin.com/in/keyangsun/">LINKEDIN</a>
-                        <p>@2019 FIESTAGRAM</p>
+                      <Footer/>
+                        
                     </div>
                 </>
             );

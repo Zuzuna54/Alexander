@@ -42,6 +42,10 @@ ul > p {
     align-items: baseline;
     flex-direction: inherit;
     display: flex;
+    margin-top: 83px;
+    border: none;
+    border-top: 1px solid #e6e6e6;
+
 
 
     textarea {
@@ -53,7 +57,7 @@ ul > p {
         font-size: 15px;
         padding: 15px 0;
         box-sizing: border-box;
-        margin-right: 10px;
+    
     }
 
     textarea:focus {

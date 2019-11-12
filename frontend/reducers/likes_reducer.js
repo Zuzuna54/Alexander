@@ -6,6 +6,7 @@ const likesReducer = (state = {}, action) => {
     Object.freeze(state); 
     switch(action.type) {
         case RECEIVE_ALL_POSTS: 
+            console.log(action)
             if (action.posts.likes === undefined) {
                 return state; 
             } else {

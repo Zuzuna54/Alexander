@@ -1,13 +1,13 @@
-
 import React from 'react';
 import CommentIndexItemContainer from './comment_index_item_container';
+import { diffDate, reformatDate } from '../../util/general_util';
 
 class CommentIndex extends React.Component {
 
     constructor(props) {
         super(props);
         this.renderViewAllComments = this.renderViewAllComments.bind(this);
-   
+        this.renderLatestDate = this.renderLatestDate.bind(this);
     }
 
     renderViewAllComments() {
@@ -21,7 +21,17 @@ class CommentIndex extends React.Component {
         }
     }
 
-  
+    renderLatestDate() {
+        if (this.props.match.path === "/home" && this.props.comments.length >= 1) {
+            let lastCommentDate =
+                this.props.comments[this.props.comments.length - 1].created_at;
+            let d = diffDate(lastCommentDate);
+            d = reformatDate(d).toUpperCase();
+            return (
+                <p className="home-comment-date">{d}</p>
+            );
+        }
+    }
 
     render() {
         let { comments, removeComment, match } = this.props;
@@ -42,7 +52,7 @@ class CommentIndex extends React.Component {
                                 removeComment={removeComment} />)
                     }
                 </ul>
-                render last elemet date 
+                {this.renderLatestDate()}
             </>
         );
 

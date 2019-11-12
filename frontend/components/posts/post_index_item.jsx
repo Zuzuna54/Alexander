@@ -1,5 +1,6 @@
 import React from  "react";
 import DropDownContainer from "../drop_down/drop_down_container";
+import LikeBarContainer from '../likes/like_bar_container';
 import CreateCommentFormContainer from "../comments/create_comment_form_container";
 import CommentIndexContainer from "../comments/comment_index_container";
 
@@ -75,7 +76,7 @@ class PostsIndexItem extends React.Component {
                     <img src={this.props.post.photoUrl} />
                 </div>
                 <div className="funk-box">
-                    <div className="likes-bar">
+                    {/* <div className="likes-bar">
                         <div className="likes-left">
                             <img src={window.like} />
                             <img src={window.comment} />
@@ -84,20 +85,19 @@ class PostsIndexItem extends React.Component {
                         <div className="likes-right">
                             <img src={window.save} />
                         </div>
-                    </div>
-                    <div className="likes-info">
+                    </div> */}
+                    {/* <div className="likes-info">
                         this is likes info
-                    </div>
-                    <div className="comment-box">
-                        <div>
+                    </div> */}
+                    <div className="post-bottom">
+                        <LikeBarContainer postId={this.props.post.id} />
+                        <div className="caption">
                             {this.cropCaption()}
                         </div>
-                            <CommentIndexContainer post={this.props.post} />
+                        <CommentIndexContainer post={this.props.post} />
+                        <CreateCommentFormContainer
+                            postId={this.props.post.id} />
                     </div>
-                    <div className="comment-timer">
-                        {this.props.post.created_at}
-                    </div>
-                    <CreateCommentFormContainer post={this.props.post} />
                 </div>
             </div>
             <DropDownContainer post={this.props.post} />

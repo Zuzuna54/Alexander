@@ -1,5 +1,5 @@
 # json.merge! post.attributes
-json.extract!(post, :id, :user_id, :location, :caption, :updated_at, :created_at, :comment_ids, :like_ids )
+json.extract!(post, :id, :user_id, :location, :caption, :updated_at, :created_at, :comment_ids, :like_ids, :likers )
 json.photoUrl url_for(post.photo)
 # json.id :id
 # json.user_id :user_id

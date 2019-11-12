@@ -1,1 +1,1 @@
-json.partial!('like', like: @like)
+json.partial!('likes', like: @like)

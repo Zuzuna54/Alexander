@@ -4,7 +4,7 @@ class CreateCommentForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            post_id: this.props.post.id,
+            post_id: this.props.postId,
             body: ""
         }
         this.props = props;

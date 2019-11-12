@@ -8,7 +8,8 @@ const postsReducer = (state = {}, action) => {
     let newState = merge({}, state);
     switch(action.type) {
         case RECEIVE_USER:
-            return merge({}, state, action.posts.AllPosts);
+            console.log(action.user.posts)
+            return merge({}, state, action.user.posts);
         case RECEIVE_COMMENT:
             newState[action.comment.post_id].comment_ids.push(action.comment.id)
             return newState;

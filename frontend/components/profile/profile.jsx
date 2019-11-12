@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
-import CreatePostFormContainer from '../post_form/create_post_form_container';
+import CreatePostFormContainer from '../post_form/post_form_container';
 import ProfileHeader from './profile_header';
 import ProfilePosts from './profile_posts';
 

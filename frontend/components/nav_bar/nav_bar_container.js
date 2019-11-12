@@ -3,8 +3,7 @@ import NavBar from './nav_bar';
 import { logout } from '../../actions/session_actions';
 
 const msp = state => {
-    let user = state.entities.users[state.session.Id];
-
+    let user = state.entities.users[state.session.id];
     return ({
         user
     });

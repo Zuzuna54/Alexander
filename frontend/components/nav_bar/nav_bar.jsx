@@ -1,10 +1,12 @@
 import React from "react";
 import SearchBarContainer from "../search_bar/search_bar_container";
 import PostFormContainer from "../post_form/post_form_container";
+import { Link } from "react-router-dom"
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
+        // console.log(this.props)
         this.handleLogout = this.handleLogout.bind(this)
         this.routeChange = this.routeChange.bind(this)
         this.handleCreate = this.handleCreate.bind(this)
@@ -17,6 +19,7 @@ class NavBar extends React.Component {
 
     routeChange() {
         let path = `/posts`;
+        console.log(this.props)
         this.props.history.push(path);
     }
 
@@ -31,7 +34,8 @@ class NavBar extends React.Component {
     render() {
         return (
             <nav id ="navbar">
-                <div onClick={this.routeChange} className="logo">
+                <Link to="/posts">
+                <div className="logo">
                     <div>
                         <img className="sub-logo" src={window.logo} />
                     </div> 
@@ -39,7 +43,7 @@ class NavBar extends React.Component {
                         Alexander
                     </div>
                 </div>
-                    
+                </Link>    
                 <SearchBarContainer />
                 <div className="nav-menu">
                     <div className="logout">
@@ -47,7 +51,9 @@ class NavBar extends React.Component {
                         src={window.action} />
                     </div>
                     <div className="profile">
-                        <img className="profile" src={window.profile}/>
+                        <Link to={`/profile/${this.props.user.id}`}>
+                            <img className="profile" src={window.profile}/>
+                        </Link>
                     </div>
                     <div className ="add-post">
                         <div id="one" className="create">   

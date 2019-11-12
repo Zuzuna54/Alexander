@@ -76,19 +76,6 @@ class PostsIndexItem extends React.Component {
                     <img src={this.props.post.photoUrl} />
                 </div>
                 <div className="funk-box">
-                    {/* <div className="likes-bar">
-                        <div className="likes-left">
-                            <img src={window.like} />
-                            <img src={window.comment} />
-                            <img src={window.share} />
-                        </div >
-                        <div className="likes-right">
-                            <img src={window.save} />
-                        </div>
-                    </div> */}
-                    {/* <div className="likes-info">
-                        this is likes info
-                    </div> */}
                     <div className="post-bottom">
                         <LikeBarContainer postId={this.props.post.id} />
                         <div className="caption">

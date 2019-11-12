@@ -13,6 +13,8 @@ const mapSTP = (state, ownProps) => {
         posts = [ undefined ];
     }
 
+
+    
     return ({
     user,
     posts

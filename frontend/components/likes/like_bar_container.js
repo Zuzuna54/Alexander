@@ -7,7 +7,7 @@ const mapSTP = (state, ownProps) => {
     let postLikes = state.entities.posts[ownProps.postId].like_ids; 
     let filteredLikes = Object.values(state.entities.likes).filter( like => 
         postLikes.includes(like.id));
-
+        console.log("hit this one")
     return({
         likes: filteredLikes, 
         likers: state.entities.posts[ownProps.postId].likers,

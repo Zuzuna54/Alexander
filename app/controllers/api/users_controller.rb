@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
 
     def show 
         @posts = []
-        @user = User.find_by(id: params[id])
+        @user = User.find_by(id: params[:id])
         if @user 
             @posts = @user.posts
             render :show

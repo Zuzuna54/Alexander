@@ -32,7 +32,7 @@ class PostIndex extends React.Component {
      
         let allPosts = [];
         if(this.state.posts !== undefined) {
-            allPosts = Object.values(this.state.posts)
+            allPosts = Object.values(this.state.posts).reverse()
         }
 
  

@@ -20,7 +20,6 @@ const usersReducer = (state= {}, action ) => {
                 .filter(followedId => followedId !== action.follow.followed_user_id)
             return newState;
         case RECEIVE_USER:
-            console.log(newState)
             return merge({}, state, { [action.user.id]: action.user });    
         case RECEIVE_USERS:
             return action.users || {};

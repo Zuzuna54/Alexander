@@ -23,7 +23,6 @@ class CommentIndex extends React.Component {
 
     renderLatestDate() {
         if (this.props.match.path === "/posts" && this.props.comments.length >= 1) {
-            console.log(this.props.comments[this.props.comments.length - 1])
             let lastCommentDate = this.props.comments[this.props.comments.length - 1].created_at;
             let d = diffDate(lastCommentDate);
             d = reformatDate(d).toUpperCase();

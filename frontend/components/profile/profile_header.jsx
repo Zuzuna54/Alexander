@@ -3,7 +3,6 @@ import React from 'react';
 class ProfileHeader extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
         this.handleFollow = this.handleFollow.bind(this);
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.renderfollow = this.renderfollow.bind(this);
@@ -24,7 +23,6 @@ class ProfileHeader extends React.Component {
 
     renderfollow() {
         let { id } = this.props.user 
-        console.log(this.props)
         return (id === this.props.props.profileUser.id) ? (
                 <div></div>
             ) : (
@@ -48,19 +46,19 @@ class ProfileHeader extends React.Component {
     }
 
     render() {
-        let { user } = this.props; 
-        const { followerIds, followingIds } = user
+        let { profileUser } = this.props.props; 
+        const { followerIds, followingIds } = profileUser
         return(
             <section className="profile-header">
-                <img src={user.profilePhoto}/>
+                <img src={profileUser.profilePhoto}/>
                 <div className="header">
-                    <h2>{user.username}</h2>
+                    <h2>{profileUser.username}</h2>
                     {this.renderfollow()}
                     {/* <div> */}
-                    <p><strong>{user.postIds.length}</strong>  Posts</p>
+                    <p><strong>{profileUser.postIds.length}</strong>  Posts</p>
                     <p><strong>{followerIds.length}</strong>  Followers</p>
                     <p><strong>{followingIds.length}</strong>  Following</p>
-                    <p>{user.bio}</p>
+                    <p>{profileUser.bio}</p>
                     {/* </div> */}
                 </div>
             </section>

@@ -24,8 +24,6 @@ class CommentIndexItem extends React.Component {
     renderDelete() {
         let { currentUserId, user } = this.props;
         
-        console.log(currentUserId === user.id)
-        
         return currentUserId === user.id ? (
             <strong onClick={() => this.handleDelete()}>
                 Delete

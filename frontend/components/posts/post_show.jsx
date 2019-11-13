@@ -111,7 +111,6 @@ class PostShow extends React.Component {
                     </>
                 ); 
             } else {
-                console.log(this.props)
                 return(
                     <>
                         <NavBarContainer/>

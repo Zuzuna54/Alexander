@@ -5,7 +5,6 @@ class LikeBar extends React.Component {
         
         super(props);
         this.props = props
-        // console.log(this.props)
         this.renderHeart = this.renderHeart.bind(this);
         this.createLike = this.createLike.bind(this);
         this.removeLike = this.removeLike.bind(this); 

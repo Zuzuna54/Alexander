@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
-        // console.log(this.props)
         this.handleLogout = this.handleLogout.bind(this)
         this.routeChange = this.routeChange.bind(this)
         this.handleCreate = this.handleCreate.bind(this)
@@ -19,7 +18,6 @@ class NavBar extends React.Component {
 
     routeChange() {
         let path = `/posts`;
-        console.log(this.props)
         this.props.history.push(path);
     }
 

@@ -6,6 +6,7 @@ class DropDown extends React.Component {
         super(props)
         this.closeDropdown = this.closeDropdown.bind(this);
         this.deletePost = this.deletePost.bind(this);
+        this.handleRoute = this.handleRoute.bind(this);
         // this.renderDelete = this.renderDelete.bind(this);
     }
 
@@ -20,20 +21,17 @@ class DropDown extends React.Component {
         this.props.deletePost(this.props.post)
     }
 
-    // renderDelete() {
-    //     let  { currentUser, post } = this.props;
-    //     console.log(currentUser);
-    //     console.log(post)
-  
-    //     return ((post.user_id === currentUser.id) ? (
-    //         <div  onClick={this.deletePost} > Delete </div>
-    //         ) : (null))
-    // }
+    handleRoute() {
+        this.props.history.push(`/post/${this.props.post.id}`)
+    }
+    
 
     render() {
-        console.log(this.props)
+        
         let { currentUser, post } = this.props;
         let deleteButton;
+        console.log(this.props.post.id)
+
         if (post.user_id === currentUser.id) {
             deleteButton = (<div onClick={this.deletePost} > Delete </div>)
         } else {
@@ -45,10 +43,10 @@ class DropDown extends React.Component {
                 <div onClick={this.closeDropdown} className="dropdown-background">
                     <div className="modal">
                         <div> this is a dropdown </div>
-                        <div onClick={() =>
-                            this.props.history.push(`/post/${this.props.post.id}`)}>Go to Post</div>
+                            <div onClick={this.handleRoute}>
+                                Go to Post
+                            </div>
                         {deleteButton}
-                        {/* {this.renderDelete()} */}
                     </div>
                 </div> 
             </div>

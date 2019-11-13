@@ -16,9 +16,8 @@ class PostsIndexItem extends React.Component {
     }
 
     handleDropDown() {
-        $('.dropdown').click(function () {
-        var buttonId = $(this).attr('id');
-        $('#dropdown-container').removeAttr('class').addClass(buttonId);
+        $(`.dropdown.${this.props.post.id}`).click(function () {
+        $('#dropdown-container').removeAttr('class').addClass("five");
         $('body').addClass('dropdown-active');
         })
     }
@@ -68,7 +67,7 @@ class PostsIndexItem extends React.Component {
                         <div className="location">{this.props.post.location}</div>
                         </div>
                     </div>
-                    <div id="five" className="dropdown" >
+                        <div className={`.dropdown ${this.props.post.id}`} >
                         <img onClick={this.handleDropDown} src={window.menu_bar}/>
                     </div>
                 </div>

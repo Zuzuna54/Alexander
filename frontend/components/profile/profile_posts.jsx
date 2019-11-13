@@ -7,6 +7,7 @@ class ProfilePosts extends React.Component {
         this.renderPosts = this.renderPosts.bind(this); 
     }
 
+   
     renderPosts() {
         if ( this.props.posts.length === 0 ) {
             return(
@@ -36,7 +37,7 @@ class ProfilePosts extends React.Component {
             <div className="profile-posts">
                 <div className="profile-menu">
                     <div className="posts">
-                        <img src="/images/grid.png"/>
+                        <img src={window.grid}/>
                         <p>POSTS</p>
                     </div>
                 </div>

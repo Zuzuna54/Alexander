@@ -28,7 +28,7 @@ class ProfileHeader extends React.Component {
         return (id === this.props.props.profileUser.id) ? (
                 <div></div>
             ) : (
-                <div className="profile-top-buttons">
+                <div className="profile-follow">
                     {(this.props.props.profileUser.followerIds.includes(this.props.props.user.id)) ? (
                         <button
                             className="profile-button"
@@ -53,7 +53,7 @@ class ProfileHeader extends React.Component {
         return(
             <section className="profile-header">
                 <img src={user.profilePhoto}/>
-                <div>
+                <div className="header">
                     <h2>{user.username}</h2>
                     {this.renderfollow()}
                     {/* <div> */}

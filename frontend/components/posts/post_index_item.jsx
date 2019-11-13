@@ -3,6 +3,7 @@ import DropDownContainer from "../drop_down/drop_down_container";
 import LikeBarContainer from '../likes/like_bar_container';
 import CreateCommentFormContainer from "../comments/create_comment_form_container";
 import CommentIndexContainer from "../comments/comment_index_container";
+import { Link } from "react-router-dom";
 
 class PostsIndexItem extends React.Component {
     constructor(props){
@@ -61,7 +62,9 @@ class PostsIndexItem extends React.Component {
             <div className="post-box">
                 <div className="post-header">
                     <div className="user-info">
-                        <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/>
+                        <Link to={`/profile/${this.props.user.id}`}>
+                            <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/>
+                        </Link>  
                         <div>
                         <div>{username ? username : (<> </>)}</div>
                         <div className="location">{this.props.post.location}</div>

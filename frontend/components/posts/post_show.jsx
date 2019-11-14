@@ -42,6 +42,7 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchUsers();
         this.props.fetchPost(this.props.match.params.id)
             .then( () => this.setState({loading: false}));
     }
@@ -102,6 +103,8 @@ class PostShow extends React.Component {
     }
 
     render() {
+        console.log(this.props)
+        let username
         if ( this.state.loading === true) {
             return (
                 <div className="loading">

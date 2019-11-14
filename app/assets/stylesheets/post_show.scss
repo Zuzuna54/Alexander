@@ -33,7 +33,7 @@
     }
 
     .post-show-section {
-        position: relative;
+        // position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -89,13 +89,12 @@
             padding-right: 10px;
             box-sizing: border-box;
             position: absolute;
-            height: 261px;
-            bottom: 161px;
+            height: 269px;
+            bottom: 344px;
 
             .show-caption {
                 display: flex; 
                 justify-content: flex-start;
-                align-items: center; 
 
                 img {
                     width: 30px;
@@ -117,6 +116,8 @@
                     div {
                         padding: 4px 0;
                         width: 100%;
+                        word-wrap: break-word;
+                        width: 270px;
                     }
 
                     :first-child {
@@ -164,12 +165,13 @@
             position: absolute;
             margin-bottom: 0; 
             width: 100%;
-            bottom: 60px;
+            bottom: 247px;
             height: 95px;
             display: flex;
             flex-direction: column; 
             border-top: 1px solid rgb(235, 235, 235); 
 
+        
             #icons {
                 display: flex;
                 flex-direction: row;
@@ -177,7 +179,8 @@
                 align-items: center; 
                 margin-bottom: 0px; 
                 position: absolute;
-                top: -90px;
+                top: -5px;
+                height: 100px;
 
                 img {
                     padding: 10px 15px 8px 0px;
@@ -192,7 +195,7 @@
         }
 
         .post-create-date {
-            position: absolute;
+            transform: translateY(1906%) translateX(6%);
             left: 16px; 
             bottom: 70px;
             font-size: 10px; 

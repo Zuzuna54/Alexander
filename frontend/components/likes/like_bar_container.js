@@ -4,13 +4,20 @@ import LikeBar from './like_bar';
 import { createLike, removeLike} from '../../actions/like_actions'; 
 
 const mapSTP = (state, ownProps) => {
-    let postLikes = state.entities.posts[ownProps.postId].like_ids; 
+
+    let postLikes = [];
+    if (state.entities.posts[ownProps.postId] !== undefined) {
+        postLikes = state.entities.posts[ownProps.postId].like_ids;
+    } 
     let filteredLikes = Object.values(state.entities.likes).filter( like => 
         postLikes.includes(like.id));
+    let likers = []; 
+    if (state.entities.posts[ownProps.postId] !== undefined) {
+        likers = state.entities.posts[ownProps.postId].liker_ids;
+    }    
     return({
         likes: filteredLikes, 
-        // likers: state.entities.posts[ownProps.postId].likers,
-        likers: state.entities.posts[ownProps.postId].liker_ids,
+        likers: likers,
         currUser: state.session.id
     });
 };

@@ -17,8 +17,10 @@ class PostsIndexItem extends React.Component {
     }
 
     handleDropDown() {
-        $(`.dropdown`).click(function () {
-        $('#dropdown-container').removeAttr('class').addClass("five");
+        const id = this.props.post.id
+        $(`.dropdown-${id}`).click(function () {
+        $('.dropdown-container').removeClass('out');
+        $(`.dropdown-container-${id}`).addClass("five");
         $('body').addClass('dropdown-active');
         })
     }
@@ -53,7 +55,6 @@ class PostsIndexItem extends React.Component {
 
     render () {
         let username;
-        console.log(this.props)
         if(this.props.user !== undefined) {
             username = this.props.user.username
         }
@@ -70,12 +71,14 @@ class PostsIndexItem extends React.Component {
                         <div className="location">{this.props.post.location}</div>
                         </div>
                     </div>
-                        <div className="dropdown">
+                        <div className={`dropdown dropdown-${this.props.post.id}`}>
                         <img onClick={this.handleDropDown} src={window.menu_bar}/>
                     </div>
                 </div>
                 <div className="post-picture" >
-                    <img src={this.props.post.photoUrl} />
+                    <Link to={`/post/${this.props.post.id}`} >
+                        <img className="display-picture" src={this.props.post.photoUrl} />
+                   </Link>
                 </div>
                 <div className="funk-box">
                     <div className="post-bottom">

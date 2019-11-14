@@ -56,12 +56,16 @@
     overflow: hidden;
     background-color: #94949440;
 }
-.post-picture > img {
+.post-picture > a {
+    width: 100%;
+}
+
+.display-picture {
     height: -webkit-fill-available;
     width: inherit;
     object-fit: cover;
 }
-.post-picture > img:hover {
+.display-picture:hover {
    cursor: pointer;
 }
 .post-bottom {

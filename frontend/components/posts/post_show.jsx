@@ -86,15 +86,17 @@ class PostShow extends React.Component {
                     Sorry, this page isn't available.
                 </h2>
                 <p>
-                    The page is removed. <Link to="/home"> Go back to Fiestagram.</Link> 
+                    The page is removed. <Link to="/posts"> Go back to Alexander</Link> 
                 </p>
             </div>
         );
     }
 
     handleDropDown() {
-        $(`.dropdown`).click(function () {
-            $('#dropdown-container').removeAttr('class').addClass("five");
+        const id = this.props.post.id
+        $(`.dropdown-${id}`).click(function () {
+            $('.dropdown-container').removeClass('out');
+            $(`.dropdown-container-${id}`).addClass("five");
             $('body').addClass('dropdown-active');
         })
     }
@@ -141,15 +143,13 @@ class PostShow extends React.Component {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="dropdown" onClick={this.handleDropDown}>
+                                        <div className={`dropdown dropdown-${this.props.post.id}`} onClick={this.handleDropDown}>
                                     <img  src={window.menu_bar}
                                         onClick={() => 
                                             this.changeSelected(this.props.post.id)}/>
                                     </div>
                                 </header>
-
-                                <section>
-
+                                <section >
                                     <div className="show-caption">
                                         <Link to={`/profile/${this.props.user.id}`}>
                                             <img src={this.props.user.profilePhoto} />
@@ -174,9 +174,7 @@ class PostShow extends React.Component {
                                         <CommentIndexContainer 
                                             post={this.props.post}/>
                                     </div>
-
-                                </section>
-                                
+                                        </section >
                                 <LikeBarContainer postId={this.props.post.id}/>
                                 <p className="post-create-date">
                                     {reformatDate(diffDate(this.props.post.updated_at))

@@ -80,7 +80,6 @@
 
         section {
             width: 100%;
-            // height: 346px;
             overflow-y: scroll;
             display: flex; 
             flex-direction: column;
@@ -89,6 +88,9 @@
             padding-left: 16px;
             padding-right: 10px;
             box-sizing: border-box;
+            position: absolute;
+            height: 261px;
+            bottom: 161px;
 
             .show-caption {
                 display: flex; 
@@ -174,6 +176,8 @@
                 justify-content: flex-start; 
                 align-items: center; 
                 margin-bottom: 0px; 
+                position: absolute;
+                top: -90px;
 
                 img {
                     padding: 10px 15px 8px 0px;

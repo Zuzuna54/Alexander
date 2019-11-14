@@ -55,15 +55,17 @@ class PostsIndexItem extends React.Component {
 
     render () {
         let username;
+        let id;
         if(this.props.user !== undefined) {
             username = this.props.user.username
+            id = this.props.user.id
         }
         return (
         <>
             <div className="post-box">
                 <div className="post-header">
                     <div className="user-info">
-                        <Link to={`/profile/${this.props.user.id}`}>
+                        <Link to={`/profile/${id}`}>
                             <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/>
                         </Link>  
                         <div>

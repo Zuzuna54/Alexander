@@ -39,16 +39,6 @@ class LikeBar extends React.Component {
     }
 
     renderHeart() {
-        // let likers = this.props.likers
-        // const likers_ids = []
-        // if(likers === undefined) {
-        //     likers = []
-        // }
-        // for(let i = 0; i < likers.length; i++) {
-        //     likers_ids.push(likers[i].id)
-        // }
-        // let { currUser } = this.props;
-        // return likers_ids.includes(currUser) ? (
         let { likers, currUser } = this.props;
         if(likers === undefined) {
             likers = []

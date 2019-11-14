@@ -12,8 +12,10 @@ class CommentIndexItem extends React.Component {
 
     componentDidMount() {
         let { comment } = this.props;
-        if (this.props.user === undefined) {
-            this.props.fetchUser(comment.user_id);
+        if (comment !== undefined) {
+            if (this.props.user === undefined) {
+                this.props.fetchUser(comment.user_id);
+            }
         }
     }
 

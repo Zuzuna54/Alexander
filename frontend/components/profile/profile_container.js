@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'; 
 import Profile from './profile';
-import { fetchUser } from '../../actions/user_actions';
+import { fetchUser, fetchUsers } from '../../actions/user_actions';
+import { fetchAllPosts } from '../../actions/post_actions';
 import { createFollow, deleteFollow } from '../../actions/followings_actions'
 
 
@@ -40,7 +41,9 @@ const mapSTP = (state, ownProps) => {
 const mapDTP = dispatch => ({
     createFollow: follow => dispatch(createFollow(follow)),
     deleteFollow: follow => dispatch(deleteFollow(follow)),
-    fetchUser: id => dispatch(fetchUser(id))
+    fetchUser: id => dispatch(fetchUser(id)),
+    fetchAllPosts: () => dispatch(fetchAllPosts()),
+    fetchUsers: () => dispatch(fetchUsers())
     
 }); 
 

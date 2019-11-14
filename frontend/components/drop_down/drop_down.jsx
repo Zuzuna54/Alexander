@@ -7,7 +7,7 @@ class DropDown extends React.Component {
         this.closeDropdown = this.closeDropdown.bind(this);
         this.deletePost = this.deletePost.bind(this);
         this.handleRoute = this.handleRoute.bind(this);
-        // this.renderDelete = this.renderDelete.bind(this);
+    
     }
 
     closeDropdown() {
@@ -28,14 +28,21 @@ class DropDown extends React.Component {
 
     render() {
         
-        let { currentUser, post } = this.props;
+        let { currentUser, currentPost, post } = this.props;
         let deleteButton;
-        console.log(this.props.post.id)
 
-        if (post.user_id === currentUser.id) {
-            deleteButton = (<div onClick={this.deletePost} > Delete </div>)
+        if (currentPost === undefined) {
+            if (post.user_id === currentUser.id) {
+                deleteButton = (<div onClick={this.deletePost} > Delete </div>)
+            } else {
+                deleteButton = null;
+            }
         } else {
-            deleteButton = null;
+            if (currentPost.user_id === currentUser.id) {
+                deleteButton = (<div onClick={this.deletePost} > Delete </div>)
+            } else {
+                deleteButton = null;
+            }
         }
   
         return (

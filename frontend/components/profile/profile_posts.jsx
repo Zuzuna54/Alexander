@@ -12,7 +12,7 @@ class ProfilePosts extends React.Component {
         if ( this.props.posts.length === 0 ) {
             return(
                 <div className="no-posts">
-                    <img src="/images/camera.png"/>
+                    <img src={window.camera}/>
                     <h3>Upload a Photo</h3>
                     <div className="upload-msg">
                         <p>Share photos that you'd like your friends to see</p>

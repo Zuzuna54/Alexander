@@ -4,8 +4,10 @@ import { removePost } from '../../actions/post_actions';
 import DropDown from './drop_down';
 
 const msp = (state, ownProps) => {
+    let currentPost = state.entities.posts[ownProps.match.params.id]
     return ({
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        currentPost: currentPost
     });
 };
 

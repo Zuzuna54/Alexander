@@ -26,6 +26,7 @@ class PostShow extends React.Component {
         this.renderEditButton = this.renderEditButton.bind(this);
         this.changeEdit = this.changeEdit.bind(this);
         this.renderEditForm = this.renderEditForm.bind(this);
+        this.handleDropDown = this.handleDropDown.bind(this);
     }
 
     changeSelected(id) {
@@ -91,6 +92,13 @@ class PostShow extends React.Component {
         );
     }
 
+    handleDropDown() {
+        $(`.dropdown`).click(function () {
+            $('#dropdown-container').removeAttr('class').addClass("five");
+            $('body').addClass('dropdown-active');
+        })
+    }
+
     render() {
         if ( this.state.loading === true) {
             return (
@@ -133,7 +141,7 @@ class PostShow extends React.Component {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="dropdown">
+                                    <div className="dropdown" onClick={this.handleDropDown}>
                                     <img  src={window.menu_bar}
                                         onClick={() => 
                                             this.changeSelected(this.props.post.id)}/>

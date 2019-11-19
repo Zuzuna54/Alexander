@@ -20,7 +20,7 @@ class PostsIndexItem extends React.Component {
         const id = this.props.post.id
         $(`.dropdown-${id}`).click(function () {
         $('.dropdown-container').removeClass('out');
-        $(`.dropdown-container-${id}`).addClass("five");
+        $(`.dropdown-container-${id}`).addClass("one");
         $('body').addClass('dropdown-active');
         })
     }

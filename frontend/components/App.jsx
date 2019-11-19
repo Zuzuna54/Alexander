@@ -12,12 +12,12 @@ const App = () => (
        
     <Switch >
         <AuthRoute exact path="/" component={GreetingContainer} />
-        <AuthRoute exact path="/login" component={LogInFormContainer} />
-        <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
+        <AuthRoute path="/login" component={LogInFormContainer} />
+        <AuthRoute path="/signup" component={SignUpFormContainer}/>
     </Switch>
 
     <Switch>
-        <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
+        <ProtectedRoute path="/posts" component={PostIndexContainer} />
         <ProtectedRoute path='/profile/:id' component={ProfileContainer} />
         <ProtectedRoute path='/post/:id' component={PostShowContainer} />
     </Switch>

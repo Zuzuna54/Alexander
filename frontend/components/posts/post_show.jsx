@@ -42,9 +42,9 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUsers();
-        this.props.fetchPost(this.props.match.params.id)
-            .then( () => this.setState({loading: false}));
+        this.props.fetchUsers().then(res => {
+            this.props.fetchPost(this.props.match.params.id)
+            .then(() => { this.setState({ loading: false }) });});
     }
 
     renderEditForm() {
@@ -124,6 +124,7 @@ class PostShow extends React.Component {
                     </>
                 ); 
             } else {
+                console.log(this.props)
                 return(
                     <>
                         <NavBarContainer/>
@@ -179,10 +180,10 @@ class PostShow extends React.Component {
                                     </div>
                                         </section >
                                 <LikeBarContainer postId={this.props.post.id}/>
-                                <p className="post-create-date">
+                                <div className="post-create-date">
                                     {reformatDate(diffDate(this.props.post.updated_at))
                                         .toUpperCase()}
-                                </p>
+                                </div>
                                 <CreateCommentFormContainer postId={this.props.post.id}/>
                             </div>
                         </div>

@@ -42,8 +42,10 @@ class Greeting extends React.Component {
     handleSubmit(e) {
         const user = Object.assign({}, this.state);
         const path = "/posts"
-        this.props.processFrom(user).then(() => {this.props.history.push(path)
-         });
+        this.props.processFrom(user)
+        .then(() => this.props.procesDemo(user))
+        console.log(user)
+        // .then(() => this.props.history.push(path))
     }
 
     renderErrors() {

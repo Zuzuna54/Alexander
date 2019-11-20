@@ -33,6 +33,7 @@ const mapSTP = (state, ownProps) => {
         user,
         posts,
         profileUser,
+        profileId,
         followerIds,
         followStatus
     });

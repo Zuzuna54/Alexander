@@ -84,10 +84,11 @@
             flex-direction: column;
             justify-content: flex-start;
             padding: 5px 0;
-            padding-left: 16px;
+            padding-left: 10px;
             padding-right: 10px;
             box-sizing: border-box;           
             height: 269px;
+            overflow-x: hidden;
 
             .show-caption {
                 display: flex; 

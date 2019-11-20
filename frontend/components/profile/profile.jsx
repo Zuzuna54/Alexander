@@ -42,7 +42,7 @@ class Profile extends React.Component {
                 <>
                     <NavBarContainer/>
                     <ProfileHeader user={this.props.user} props={this.props}/>
-                    <ProfilePosts posts={this.props.posts}/>
+                    <ProfilePosts user={this.props.user} profileId={this.props.profileId} posts={this.props.posts}/>
                     <CreatePostFormContainer/>
                     <div className="footer">
                       <Footer/>

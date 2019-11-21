@@ -8,6 +8,7 @@ class CommentIndexItem extends React.Component {
         super(props);
         this.handleDelete = this.handleDelete.bind(this);
         this.renderDelete = this.renderDelete.bind(this);
+        this.conditionalPhoto = this.conditionalPhoto.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +35,18 @@ class CommentIndexItem extends React.Component {
                 null
             );
     }
+    conditionalPhoto() {
+        console.log(this.props)
+        if (this.props.user.profilePhoto) {
+            return (
+                <img className="profile-picture" src={this.props.user.profilePhoto} />
+            )
+        } else {
+            return (
+                <img className="profile-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt="" />
+            )
+        }
+    }
 
     render() {
   
@@ -53,7 +66,7 @@ class CommentIndexItem extends React.Component {
                 return (
                     <div className="show-caption">
                         <Link to={`/profile/${this.props.user.id}`}>
-                            <img src={this.props.user.profilePhoto} />
+                            {this.conditionalPhoto()}
                         </Link>
                         <div>
                             <div>

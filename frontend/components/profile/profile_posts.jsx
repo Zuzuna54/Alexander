@@ -3,7 +3,6 @@ import ProfilePostItem from './profile_post_item';
 
 class ProfilePosts extends React.Component {
     constructor(props) {
-        console.log(props)
         super(props);
         this.renderPosts = this.renderPosts.bind(this); 
     }
@@ -11,7 +10,6 @@ class ProfilePosts extends React.Component {
    
     renderPosts() {
         const pageId = parseInt(this.props.profileId)
-        console.log(pageId)
         if ( this.props.posts.length === 0 && pageId === this.props.user.id) {
             return(
                 <div className="no-posts">

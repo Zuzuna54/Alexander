@@ -34,7 +34,6 @@ class DropDown extends React.Component {
         
         let { currentUser, currentPost, post } = this.props;
         let deleteButton;
-        console.log(this.props)
         if (currentPost === undefined) {
             if (post.user_id === currentUser.id) {
                 deleteButton = (<div onClick={this.deletePost} > Delete </div>)

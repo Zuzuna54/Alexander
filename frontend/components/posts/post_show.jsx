@@ -27,6 +27,20 @@ class PostShow extends React.Component {
         this.changeEdit = this.changeEdit.bind(this);
         this.renderEditForm = this.renderEditForm.bind(this);
         this.handleDropDown = this.handleDropDown.bind(this);
+        this.conditionalPhoto = this.conditionalPhoto.bind(this);
+    }
+
+    conditionalPhoto() {
+        console.log(this.props)
+        if (this.props.user.profilePhoto) {
+            return (
+                <img className="profile-picture" src={this.props.user.profilePhoto} />
+            )
+        } else {
+            return (
+                <img className="profile-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt="" />
+            )
+        }
     }
 
     changeSelected(id) {
@@ -103,7 +117,6 @@ class PostShow extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         let username
         if ( this.state.loading === true) {
             return (
@@ -124,7 +137,6 @@ class PostShow extends React.Component {
                     </>
                 ); 
             } else {
-                console.log(this.props)
                 return(
                     <>
                         <NavBarContainer/>
@@ -137,9 +149,9 @@ class PostShow extends React.Component {
 
                                 <header>
                                     <div className="header-left">
-                                        {/* <Link to={`/profile/${this.props.user.id}`}>
-                                            <img src={this.props.user.profilePhoto}/>
-                                        </Link> */}
+                                        <Link to={`/profile/${this.props.user.id}`}>
+                                            {this.conditionalPhoto()}
+                                        </Link>
                                         <div>
                                             <p>{this.props.user.username}</p>
                                             <p className="location">
@@ -156,7 +168,7 @@ class PostShow extends React.Component {
                                 <section >
                                     <div className="show-caption">
                                         <Link to={`/profile/${this.props.user.id}`}>
-                                            <img src={this.props.user.profilePhoto} />
+                                            {this.conditionalPhoto()}
                                         </Link>
                                         <div>
                                             <div>

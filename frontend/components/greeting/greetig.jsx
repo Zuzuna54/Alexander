@@ -44,8 +44,6 @@ class Greeting extends React.Component {
         const path = "/posts"
         this.props.processFrom(user)
         .then(() => this.props.procesDemo(user))
-        console.log(user)
-        // .then(() => this.props.history.push(path))
     }
 
     renderErrors() {

@@ -6,6 +6,7 @@ class ProfileHeader extends React.Component {
         this.handleFollow = this.handleFollow.bind(this);
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.renderfollow = this.renderfollow.bind(this);
+        this.conditionalPhoto = this.conditionalPhoto.bind(this);
     }
 
     handleFollow(e) {
@@ -44,22 +45,33 @@ class ProfileHeader extends React.Component {
             )
         
     }
+    conditionalPhoto() {
+        console.log(this.props)
+        if (this.props.user.profilePhoto) {
+            return (
+                <img className="profile-picture" src={this.props.user.profilePhoto} />
+            )
+        } else {
+            return (
+                <img className="profile-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt="" />
+            )
+        }
+    }
 
     render() {
         let { profileUser } = this.props.props; 
         const { followerIds, followingIds } = profileUser
         return(
             <section className="profile-header">
-                <img src={profileUser.profilePhoto}/>
+                {this.conditionalPhoto()}
+                {/* <img src={profileUser.profilePhoto}/> */}
                 <div className="header">
                     <h2>{profileUser.username}</h2>
                     {this.renderfollow()}
-                    {/* <div> */}
                     <p><strong>{profileUser.postIds.length}</strong>  Posts</p>
                     <p><strong>{followerIds.length}</strong>  Followers</p>
                     <p><strong>{followingIds.length}</strong>  Following</p>
                     <p>{profileUser.bio}</p>
-                    {/* </div> */}
                 </div>
             </section>
         );  

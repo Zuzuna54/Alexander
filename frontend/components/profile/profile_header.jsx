@@ -13,7 +13,6 @@ class ProfileHeader extends React.Component {
     }
 
     renderEdit(){
-        console.log(parseInt(this.props.props.profileId) === this.props.user.id)
         if (parseInt(this.props.props.profileId) === this.props.user.id) {
             return (
                 <Link to="/edit-profile">
@@ -62,7 +61,8 @@ class ProfileHeader extends React.Component {
         
     }
     conditionalPhoto() {
-        if (this.props.user.profilePhoto) {
+        console.log(this.props)
+        if (this.props.props.profileUser.profilePhoto) {
             return (
                 <img className="profile-picture" src={this.props.user.profilePhoto} />
             )

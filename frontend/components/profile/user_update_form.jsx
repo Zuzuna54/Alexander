@@ -50,7 +50,7 @@ class UserUpdateForm extends React.Component {
             }
             this.props.updateUser(formData, this.props.userId )
                 .then((result) => {
-                    this.props.history.push(`/users/${result.user.id}`)
+                    this.props.history.push(`/profile/${result.user.id}`)
                 })
         }
     }

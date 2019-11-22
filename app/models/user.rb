@@ -34,7 +34,7 @@ class User < ApplicationRecord
     source: :follower,
     dependent: :destroy
 
-  has_one_attached :profile_photo
+  has_one_attached :photo
  
   
   def self.find_by_credentials(username, password)

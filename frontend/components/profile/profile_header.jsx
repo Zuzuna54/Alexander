@@ -1,4 +1,6 @@
 import React from 'react';
+import { parse } from 'url';
+import { Link } from "react-router-dom"
 
 class ProfileHeader extends React.Component {
     constructor(props) {
@@ -7,6 +9,20 @@ class ProfileHeader extends React.Component {
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.renderfollow = this.renderfollow.bind(this);
         this.conditionalPhoto = this.conditionalPhoto.bind(this);
+        this.renderEdit = this.renderEdit.bind(this);
+    }
+
+    renderEdit(){
+        console.log(parseInt(this.props.props.profileId) === this.props.user.id)
+        if (parseInt(this.props.props.profileId) === this.props.user.id) {
+            return (
+                <Link to="/edit-profile">
+                    <button className="profile-button">
+                        Edit Profile
+                    </button>
+                </Link>
+            )
+        }
     }
 
     handleFollow(e) {
@@ -46,7 +62,6 @@ class ProfileHeader extends React.Component {
         
     }
     conditionalPhoto() {
-        console.log(this.props)
         if (this.props.user.profilePhoto) {
             return (
                 <img className="profile-picture" src={this.props.user.profilePhoto} />
@@ -68,6 +83,7 @@ class ProfileHeader extends React.Component {
                 <div className="header">
                     <h2>{profileUser.username}</h2>
                     {this.renderfollow()}
+                    {this.renderEdit()}
                     <p><strong>{profileUser.postIds.length}</strong>  Posts</p>
                     <p><strong>{followerIds.length}</strong>  Followers</p>
                     <p><strong>{followingIds.length}</strong>  Following</p>

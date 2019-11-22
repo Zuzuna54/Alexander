@@ -31,4 +31,9 @@ export const searchUsers = username => dispatch => {
     return UserAPIUtil.searchUsers(username).then(users => dispatch(searchUser(users)));
 };
 
+export const updateUser = user => dispatch => (
+    UserAPIUtil.updateUser(user).then(user => (
+        dispatch(receiveUser(user))
+    ))
+);
 

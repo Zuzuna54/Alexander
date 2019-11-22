@@ -69,7 +69,7 @@ class PostsIndexItem extends React.Component {
                             <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/>
                         </Link>  
                         <div>
-                        <div>{username ? username : (<> </>)}</div>
+                        <div className="username">{username ? username : (<> </>)}</div>
                         <div className="location">{this.props.post.location}</div>
                         </div>
                     </div>

@@ -17,3 +17,13 @@ export const searchUsers = username => (
         method: 'get'
     })
 );
+
+export const updateUser = (formData, userId) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `api/users/${userId}`,
+        data: formData,
+        contentType: false,
+        processData: false
+    });
+};

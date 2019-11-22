@@ -13,7 +13,22 @@ class PostsIndexItem extends React.Component {
         }
         this.cropCaption = this.cropCaption.bind(this);
         this.handleDropDown = this.handleDropDown.bind(this);
+        this.conditionalPhoto = this.conditionalPhoto.bind(this);
         
+    }
+    conditionalPhoto() {
+        console.log(this.props)
+        if (this.props.user !== undefined) {
+            if (this.props.user.profilePhoto) {
+                return (
+                    <img className="user-picture" src={this.props.user.profilePhoto} />
+                )
+            } else {
+                return (
+                    <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt="" />
+                )
+            }
+        }
     }
 
     handleDropDown() {
@@ -66,7 +81,8 @@ class PostsIndexItem extends React.Component {
                 <div className="post-header">
                     <div className="user-info">
                         <Link to={`/profile/${id}`}>
-                            <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/>
+                            {/* <img className="user-picture" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-png-2.png" alt=""/> */}
+                            {this.conditionalPhoto()}
                         </Link>  
                         <div>
                         <div className="username">{username ? username : (<> </>)}</div>

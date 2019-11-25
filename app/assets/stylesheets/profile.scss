@@ -193,3 +193,20 @@
     }
 }
 
+.edit-button {
+    margin-bottom: 10px;
+    height: 23px;
+    width: 88px;
+    border-radius: 5px;
+    background-color: #1b73f5;
+    color: white;
+    font-weight: 600;
+}
+
+.edit-button:focus {
+    outline: none;
+}
+
+.edit-button:hover {
+    cursor: pointer;
+}

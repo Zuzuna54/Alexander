@@ -11,7 +11,7 @@ class UserUpdateForm extends React.Component {
             bio: currentUser.bio,
             username: currentUser.username,
             email: currentUser.email,
-            photoUrl: currentUser.photoUrl,
+            photoUrl: currentUser.profilePhoto,
             photoFile: null
         };
 
@@ -70,7 +70,7 @@ class UserUpdateForm extends React.Component {
 
 
     render() {
-
+        console.log(this.props)
         let postPreview = 
             <div className="preview-div update-preview">
                 <div className="update-left-top">

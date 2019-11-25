@@ -16,7 +16,7 @@ class ProfileHeader extends React.Component {
         if (parseInt(this.props.props.profileId) === this.props.user.id) {
             return (
                 <Link to="/edit-profile">
-                    <button className="profile-button">
+                    <button className="edit-button">
                         Edit Profile
                     </button>
                 </Link>

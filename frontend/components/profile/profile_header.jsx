@@ -10,6 +10,16 @@ class ProfileHeader extends React.Component {
         this.renderfollow = this.renderfollow.bind(this);
         this.conditionalPhoto = this.conditionalPhoto.bind(this);
         this.renderEdit = this.renderEdit.bind(this);
+        this.renderBio = this.renderBio.bind(this);
+    }
+
+    renderBio() {
+        let { profileUser } = this.props.props
+        if( profileUser.bio === null) {
+            return ( <> </>)
+        } else {
+            return (<> {profileUser.bio} </>)
+        }
     }
 
     renderEdit(){
@@ -87,7 +97,7 @@ class ProfileHeader extends React.Component {
                     <p><strong>{profileUser.postIds.length}</strong>  Posts</p>
                     <p><strong>{followerIds.length}</strong>  Followers</p>
                     <p><strong>{followingIds.length}</strong>  Following</p>
-                    <p>{profileUser.bio}</p>
+                    <p>{this.renderBio()}</p>
                 </div>
             </section>
         );  

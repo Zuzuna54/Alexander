@@ -89,7 +89,6 @@ class ProfileHeader extends React.Component {
         return(
             <section className="profile-header">
                 {this.conditionalPhoto()}
-                {/* <img src={profileUser.profilePhoto}/> */}
                 <div className="header">
                     <h2>{profileUser.username}</h2>
                     {this.renderfollow()}
